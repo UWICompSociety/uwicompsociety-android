@@ -1,1 +1,1 @@
-"# uwicompsociety-android" 
+# uwicompsociety-android
