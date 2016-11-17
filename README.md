@@ -6,6 +6,37 @@ A companion project to the [Computing Society Website](https://github.com/UWICom
 
 The Computing Society App for android is a companion project of the Computing Society website and will support/mirror many of the same features. In light of this, the aim of the app is also to give a convenient outside view of the work of the Society as well as the people responsible.
 
+## Feature Set
+
+The app will support the following feature set, which is subject to change
+
+* <b>Create user profile</b> <br/>
+  A potential user should be able to sign up to become a member of the computing society. <br/> 
+  Signing up is done using student ID number, username, email address, password
+  
+* <b>Log in</b><br/>
+  General id number + password combination login
+  
+* <b>Search</b><br/>
+  The app shall allow a user to search for another user by ID number or username and view their user profile
+  
+* <b>Discussion forum</b><br/>
+  A reflection of the web based discussion forum on the Society website.<br/>
+  Users shall be able to create discussion threads and make replies.
+  
+* <b>Blog creation</b><br/>
+  A user shall be able to create a blog to feature a topic which they care to share
+
+* <b>Project display</b><br/>
+  A showy display of the projects completed by the Computing Society and their details
+
+* <b>News feed</b><br/>
+  A chronological feed of Computing Society announcements
+  
+* <b>Subscribe to mailing list</b><br/>
+  A simple setting allowing a user to opt in and out of receiving emails
+
+
 ## Contributions
 
 To contribute to this project, you will need to do the following:
