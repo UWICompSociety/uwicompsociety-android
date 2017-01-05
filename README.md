@@ -39,35 +39,66 @@ The app will support the following feature set, which is subject to change
 
 ## Models
 
-- Post
-    * topic : String
-    * content : String
-    * created : DateTime
-    * createdBy : User
-    * comments : ArrayList<Comment>
-- UserPost extends Post
-    * thread : Thread
-- Thread extends Post
-    * permissions : ArrayList<String> (may need to change)
-- NewsPost extends Post
-    * link : String
 - User
-    * firstname : String
-    * lastname : String
-    * created : DateTime
-    * dob : DateTime (make final)
-    * alias : String
-    * description: String
-    * profilePicture : String
-- Project
-    * sourceLink : String
-    * title : String
-    * description : String
-    * contributors : ArrayList<User>
+    * user_id: int
+    * email: String
+    * first_name: String
+    * last_name: String
+    * username: String
+
+- Blog
+    * blog_id: int
+    * user_id: int
+    * date: String
+    * topic: String
+    * num_posts: int
+
+- Forum
+    * forum_id: int
+    * user_id: int
+    * topic: String
+    * date: String
+    * message: String
+    * num_comments: int
+    * num_likes: int
+    * num_dislikes: int
+
+- BlogPost
+    * post_id: int
+    * user_id: int
+    * blog_id: int
+    * title: String
+    * date: String
+    * message: String
+    * num_comments: int
+    * num_likes: int
+    * num_dislikes: int
+
 - Comment
-    * createdBy : User
-    * content : String
-    * replies : ArrayList<Comment>
+    * comment_id: int
+    * user_id: int
+    * type: int
+    * parent_id: int
+    * message: String
+    * date: String
+    * num_likes: int
+    * num_dislikes: int
+
+- NewsItem
+    * news_id: int
+    * user_id: int
+    * title: String
+    * summary: String
+    * date: String
+    * body: String
+    * num_comments: int
+
+- Project
+    * project_id: int
+    * user_ids: List
+    * name: String
+    * description: String
+    * link: String
 
 
 ## Contributions
