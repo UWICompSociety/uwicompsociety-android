@@ -37,6 +37,39 @@ The app will support the following feature set, which is subject to change
   A simple setting allowing a user to opt in and out of receiving emails
 
 
+## Models
+
+- Post
+    * topic : String
+    * content : String
+    * created : DateTime
+    * createdBy : User
+    * comments : ArrayList<Comment>
+- UserPost extends Post
+    * thread : Thread
+- Thread extends Post
+    * permissions : ArrayList<String> (may need to change)
+- NewsPost extends Post
+    * link : String
+- User
+    * firstname : String
+    * lastname : String
+    * created : DateTime
+    * dob : DateTime (make final)
+    * alias : String
+    * description: String
+    * profilePicture : String
+- Project
+    * sourceLink : String
+    * title : String
+    * description : String
+    * contributors : ArrayList<User>
+- Comment
+    * createdBy : User
+    * content : String
+    * replies : ArrayList<Comment>
+
+
 ## Contributions
 
 To contribute to this project, you will need to do the following:
