@@ -36,6 +36,23 @@ The app will support the following feature set, which is subject to change
 * <b>Subscribe to mailing list</b><br/>
   A simple setting allowing a user to opt in and out of receiving emails
 
+## Mockups
+
+#### Login
+
+![](https://raw.githubusercontent.com/UWICompSociety/uwicompsociety-android/dev/mockups/sign_in.PNG)
+
+#### News Feed
+
+![](https://raw.githubusercontent.com/UWICompSociety/uwicompsociety-android/dev/mockups/news_feed.PNG)
+
+#### User Profile
+
+![](https://raw.githubusercontent.com/UWICompSociety/uwicompsociety-android/dev/mockups/user_profile.PNG)
+
+#### Blog Post
+
+![](https://raw.githubusercontent.com/UWICompSociety/uwicompsociety-android/dev/mockups/blog_post.PNG)
 
 ## Models
 
