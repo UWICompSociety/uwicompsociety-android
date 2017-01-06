@@ -1,21 +1,41 @@
 package com.uwimonacs.computingsociety.models;
 
 import com.activeandroid.Model;
+import com.activeandroid.annotation.Column;
+import com.activeandroid.annotation.Table;
 
 /**
  * Created by jourdanDunkley on 1/6/2017.
  */
+
+@Table(name="BlogPost")
 public class BlogPost extends Model{
 
-
+    @Column(name="post_id")
     private int post_id;
+
+    @Column(name="user_id")
     private int user_id;
+
+    @Column(name="blog_id")
     private int blog_id;
+
+    @Column(name="title")
     private String title;
+
+    @Column(name="date")
     private String date;
+
+    @Column(name="message")
     private String message;
+
+    @Column(name="num_comments")
     private int num_comments;
+
+    @Column(name="num_likes")
     private int num_likes;
+
+    @Column(name="num_dislikes")
     private int num_dislikes;
 
     public BlogPost(){}
