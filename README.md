@@ -1,5 +1,6 @@
 # Computing Society app for Android
 
+
 ![](http://www.logospike.com/wp-content/uploads/2015/10/Android_Logo_09.png)
 
 A companion project to the [Computing Society Website](https://github.com/UWICompSociety/uwi-cs-webapp/)
@@ -162,3 +163,4 @@ $ git push -u origin <branch_name>
 
 ## Contributors
   * [@sultanofcardio](https://github.com/sultanofcardio)
+  * [@jourdanDunkley](https://github.com/jourdanDunkley)
