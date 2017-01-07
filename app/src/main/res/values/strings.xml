@@ -10,4 +10,13 @@
     <string name="prompt_create_account">Create account</string>
     <string name="banner_description">Computing Society Banner</string>
     <string name="chevron_description">Sign in button</string>
+
+    <!--Related to User Profile Activity-->
+    <string name="name_hint">Name</string>
+    <string name="email_hint">Email address</string>
+    <string name="username_hint">Username</string>
+    <string name="github_username_hint">Github username</string>
+    <string name="view_blogs">View Blogs</string>
+    <string name="view_discussions">View Discussions</string>
+    <string name="view_projects">View Projects</string>
 </resources>
