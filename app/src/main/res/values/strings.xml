@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Computing Society</string>
+
+    <!--Related to Login Activity-->
+    <string name="sign_in_label">Sign in with your email</string>
+    <string name="sign_in_text_label">Sign in</string>
+    <string name="prompt_email">Enter your email address</string>
+    <string name="prompt_password">Enter your password</string>
+    <string name="prompt_forgot_password">Forgot password</string>
+    <string name="prompt_create_account">Create account</string>
+    <string name="banner_description">Computing Society Banner</string>
+    <string name="chevron_description">Sign in button</string>
 </resources>
