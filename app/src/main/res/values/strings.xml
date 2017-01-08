@@ -42,6 +42,10 @@
     <string name="item_members">Members</string>
     <string name="item_settings">Settings</string>
 
+    <!--Related to Project List-->
+    <string name="project_title">OurVLE Mobile</string>
+    <string name="project_description"></string>
+
     <!--Related to Blogs-->
 
     <!--Miscellaneous-->

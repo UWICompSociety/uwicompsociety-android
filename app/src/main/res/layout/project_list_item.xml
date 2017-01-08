@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginTop="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="336dp"
+        android:background="@drawable/ourvle_icon">
+
+        <TextView
+            android:text="@string/read_more"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:paddingStart="16dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="14dp"
+            android:id="@+id/project_read_more"
+            android:background="#FAFAFA"
+            android:textColor="@color/link"
+            android:textSize="18sp"
+            android:typeface="normal" />
+
+        <TextView
+            android:text="@string/lorem_ipsum_text_double"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_above="@id/project_read_more"
+            android:layout_alignStart="@id/project_read_more"
+            android:paddingStart="16dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="11dp"
+            android:id="@+id/project_description"
+            android:background="#FAFAFA"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:text="@string/project_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/project_description"
+            android:layout_alignStart="@id/project_description"
+            android:paddingStart="16dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="7.5dp"
+            android:id="@+id/project_title"
+            android:background="#FAFAFA"
+            android:textColor="@android:color/black"
+            android:textSize="26sp"
+            android:textStyle="normal|bold" />
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
