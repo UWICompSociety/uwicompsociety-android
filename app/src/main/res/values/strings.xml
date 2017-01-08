@@ -15,10 +15,18 @@
     <string name="name_hint">Name</string>
     <string name="email_hint">Email address</string>
     <string name="username_hint">Username</string>
-    <string name="github_username_hint">Github username</string>
+    <string name="github_username_hint">GitHub username</string>
     <string name="view_blogs">View Blogs</string>
     <string name="view_discussions">View Discussions</string>
     <string name="view_projects">View Projects</string>
+
+    <!--Related to Edit Profile Activity-->
+    <string name="prompt_facebook">Facebook url</string>
+    <string name="prompt_twitter">Twitter url</string>
+    <string name="prompt_instagram">Instagram url</string>
+    <string name="prompt_linkedin">LinkedIn url</string>
+    <string name="prompt_snapchat">SnapChat url</string>
+    <string name="prompt_github">GitHub url</string>
 
     <!--Related to Blogs-->
 
