@@ -121,7 +121,16 @@ The app will support the following feature set, which is subject to change
 
 ## Contributions
 
-To contribute to this project, you will need to do the following:
+If you have been given push access to this repository, you should clone this repository and bear the following general working git guidelines in mind. You will have push access to this repository if you are a member of ![this team](https://github.com/orgs/UWICompSociety/teams/mobile-development-sig).
+
+  * No work is to be done on the master branch. The master branch is protected and you won't be able to push to it
+  * Do not work directly on the dev branch. After you clone this repo you should create a local branch for any feature you are working on
+  * It is good practice to pull changes from the remote dev branch to your local copy frequently and merge them into your feature branch to keep it up to date. This is especially true if you working on something that takes you longer than an hour to complete. This will help you avoid merge conflicts when you are finished with your feature.
+  * When you are finished working, commit all your changes to your feature branch and merge them into your local copy of the dev branch. If you had been keeping your feature branch up to date this should be relatively easy.
+  * Do a final pull on the dev branch and resolve any merge conflicts that may occur. You can read more about ![resolving merge conflicts here](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/). 
+  * Push to the remote dev branch.
+
+Alternatively, to contribute to this project, you will need to do the following:
 
 #### Fork the repository to your GitHub account by clicking the relevant button above
 #### Clone your forked repository to your development computer. This is the repository that you will do your work in
@@ -164,3 +173,4 @@ $ git push -u origin <branch_name>
 ## Contributors
   * [@sultanofcardio](https://github.com/sultanofcardio)
   * [@jourdanDunkley](https://github.com/jourdanDunkley)
+  * [@don1998](https://github.com/don1998)
