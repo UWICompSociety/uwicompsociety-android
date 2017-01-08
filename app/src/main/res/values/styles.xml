@@ -15,4 +15,6 @@
 
     <style name="AppTheme.NoActionBar.UserProfileActivity" />
 
+    <style name="AppTheme.NoActionBar.BlogPostActivity" />
+
 </resources>
