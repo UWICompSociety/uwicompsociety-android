@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single"
+        android:id="@+id/group_1">
+        <item
+            android:id="@+id/news_feed"
+            android:icon="@drawable/newspaper_grey"
+            android:title="@string/item_news_feed" />
+        <item
+            android:id="@+id/forums"
+            android:icon="@drawable/forum_grey"
+            android:title="@string/item_forums" />
+        <item
+            android:id="@+id/blogs"
+            android:icon="@drawable/blogger_grey"
+            android:title="@string/item_blogs" />
+        <item
+            android:id="@+id/projects"
+            android:icon="@drawable/application_grey"
+            android:title="@string/item_society_projects"/>
+        <item
+            android:id="@+id/members"
+            android:icon="@drawable/people_grey"
+            android:title="@string/item_members"/>
+    </group>
+    <group
+        android:id="@+id/group_2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/settings"
+            android:icon="@drawable/settings_grey"
+            android:title="@string/item_settings"/>
+    </group>
+</menu>
