@@ -1,4 +1,4 @@
-package com.uwimonacs.computingsociety.activities;
+package com.uwimonacs.computingsociety.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -27,12 +27,20 @@ public class ProjectListFragment extends Fragment {
     private ProjectListAdapter projectListAdapter;
     private RecyclerView projectListView;
     private List<Project> projectItems;
+    private TextView projectTitle, projectDescription, projectLink;
     Context context;
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstance){
         view = inflater.inflate(R.layout.project_list, container, false);
 
         initViews();
+
+        return view;
+
+    }
+
+    private void initViews() {
+        projectListView = (RecyclerView)view.findViewById(R.id.project_recycler);
 
     }
 }
