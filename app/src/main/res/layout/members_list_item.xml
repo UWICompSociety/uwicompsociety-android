@@ -14,21 +14,26 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView" />
+            android:id="@+id/memberPic"
+            tools:src="@drawable/profile"
+            android:layout_alignBottom="@+id/linearLayout"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp" />
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:layout_toEndOf="@+id/imageView">
+            android:layout_toEndOf="@+id/memberPic"
+            android:id="@+id/linearLayout">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Matthew Stone"
-                android:id="@+id/textView"
+                android:id="@+id/memberName"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight=".5"
                 android:gravity="center_vertical"
@@ -39,7 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="President"
-                android:id="@+id/textView2"
+                android:id="@+id/memberPosition"
                 android:layout_weight=".5"
                 android:gravity="center_vertical"
                 android:textColor="#7c000000"

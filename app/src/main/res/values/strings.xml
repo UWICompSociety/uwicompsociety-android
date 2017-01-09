@@ -14,6 +14,10 @@
     <!--Related to Create Account Activity-->
     <string name="create_username">Choose a username</string>
     <string name="existing_account">Have an account? Sign in</string>
+<<<<<<< HEAD
+=======
+    <string name="create_account_label">Create an account</string>
+>>>>>>> 0e71458c70a9ea5ce7a22e1ba29ce516573625ed
     <string name="create_acc_button">Create account</string>
 
     <!--Related to User Profile Activity-->
@@ -32,11 +36,26 @@
     <string name="prompt_linkedin">LinkedIn url</string>
     <string name="prompt_snapchat">SnapChat url</string>
     <string name="prompt_github">GitHub url</string>
+    
+    <!--Related to Navigation Drawer-->
+    <string name="item_news_feed">News Feed</string>
+    <string name="item_forums">Forums</string>
+    <string name="item_blogs">Blogs</string>
+    <string name="item_society_projects">Society Projects</string>
+    <string name="item_members">Members</string>
+    <string name="item_settings">Settings</string>
+
+    <!--Related to Project List-->
+    <string name="project_title">OurVLE Mobile</string>
+    <string name="project_description"></string>
 
     <!--Related to Blogs-->
 
     <!--Miscellaneous-->
+    <string name="search">Search</string>
     <string name="read_more">READ MORE</string>
+    <string name="sample_name">Firstname Lastname</string>
+    <string name="sample_email">someone@example.com</string>
     <string name="lorem_ipsum_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
     <string name="lorem_ipsum_text_double">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
 </resources>

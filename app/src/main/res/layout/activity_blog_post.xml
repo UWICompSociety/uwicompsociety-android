@@ -106,7 +106,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 tools:listitem="@layout/comment_list_item"
-                app:nestedScrollingEnabled="false"/>
+                android:nestedScrollingEnabled="false"
+                tools:targetApi="lollipop" />
+            <!--TODO: Replicate the above in code-->
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>
