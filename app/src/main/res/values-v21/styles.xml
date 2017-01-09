@@ -7,4 +7,12 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
+    <style name="AppTheme.NoActionBar.UserProfileActivity">
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.BlogPostActivity">
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+    </style>
+
 </resources>

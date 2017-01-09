@@ -13,4 +13,10 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppTheme.NoActionBar.UserProfileActivity" />
+
+    <style name="AppTheme.NoActionBar.BlogPostActivity" />
+
+    <style name="AppTheme.NoActionBar.CreateAccount">
+    </style>
 </resources>
