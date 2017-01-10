@@ -17,10 +17,9 @@ import java.util.List;
 
 public class ProjectListAdapter extends RecyclerView.Adapter<ProjectListAdapter.ProjectHolder>{
 
-    //fill with example data
     List<Project> projects;
 
-    public ProjectListAdapter(){projects=null;}
+    public ProjectListAdapter(List<Project> projects){this.projects = projects;}
 
     @Override
     public ProjectHolder onCreateViewHolder(ViewGroup parent, int viewType) {
