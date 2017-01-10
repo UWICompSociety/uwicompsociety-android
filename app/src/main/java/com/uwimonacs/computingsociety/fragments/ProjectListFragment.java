@@ -42,7 +42,7 @@ public class ProjectListFragment extends Fragment {
     private void init() {
         projectListView = (RecyclerView)view.findViewById(R.id.project_recycler);
         projectListAdapter = new ProjectListAdapter(getProjects());
-        LinearLayoutManager manager = new LinearLayoutManager(view.getContext());
+        LinearLayoutManager manager = new LinearLayoutManager(getActivity());
 
         projectListView.setAdapter(projectListAdapter);
         projectListView.setLayoutManager(manager);
