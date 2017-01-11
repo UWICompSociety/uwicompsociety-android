@@ -29,19 +29,24 @@ public class NewsItem extends Model {
     @Column(name="body")
     private String body;
 
+    @Column(name="image_url")
+    private String image_url;
+
     @Column(name="num_comments")
     private int num_comments;
 
     public NewsItem() {
     }
 
-    public NewsItem(int news_id, int user_id, String title, String summary, String date, String body, int num_comments) {
+    public NewsItem(int news_id, int user_id, String title, String summary, String date,
+                    String body, String image_url, int num_comments) {
         this.news_id = news_id;
         this.user_id = user_id;
         this.title = title;
         this.summary = summary;
         this.date = date;
         this.body = body;
+        this.image_url = image_url;
         this.num_comments = num_comments;
     }
 
@@ -105,6 +110,15 @@ public class NewsItem extends Model {
 
     public NewsItem setNum_comments(int num_comments) {
         this.num_comments = num_comments;
+        return this;
+    }
+
+    public String getImage_url() {
+        return image_url;
+    }
+
+    public NewsItem setImage_url(String image_url) {
+        this.image_url = image_url;
         return this;
     }
 }

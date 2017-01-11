@@ -20,6 +20,9 @@ public class BlogPost extends Model{
     @Column(name="blog_id")
     private int blog_id;
 
+    @Column(name="image_url")
+    private String imageUrl;
+
     @Column(name="title")
     private String title;
 
@@ -39,14 +42,16 @@ public class BlogPost extends Model{
     private int num_dislikes;
 
     public BlogPost(){}
+
     public BlogPost(int post_id, int user_id, int blog_id, String title, String date, String message,
-                    int num_comments, int num_likes, int num_dislikes){
+                    String imageUrl, int num_comments, int num_likes, int num_dislikes){
         this.post_id = post_id;
         this.user_id = user_id;
         this.blog_id = blog_id;
         this.title = title;
         this.date = date;
         this.message = message;
+        this.imageUrl = imageUrl;
         this.num_comments = num_comments;
         this.num_likes = num_likes;
         this.num_dislikes = num_dislikes;
@@ -130,6 +135,15 @@ public class BlogPost extends Model{
 
     public BlogPost setNum_dislikes(int num_dislikes) {
         this.num_dislikes = num_dislikes;
+        return this;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public BlogPost setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
         return this;
     }
 }
