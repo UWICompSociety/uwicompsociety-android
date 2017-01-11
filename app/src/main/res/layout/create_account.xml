@@ -114,6 +114,7 @@
                 android:textColor="#000"
                 android:text="@string/create_acc_button"/>
             <ImageView
+                android:id="@+id/sign_in_button"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_marginEnd="16dp"

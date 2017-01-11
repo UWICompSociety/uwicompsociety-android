@@ -6,7 +6,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
+
 
 import static android.support.design.widget.Snackbar.make;
 
@@ -22,10 +23,10 @@ public class CreateAccountActivity extends AppCompatActivity {
         setContentView(R.layout.create_account);
 
         //Views are initialised
-        final EditText email = this.findViewById(R.id.email);
-        final EditText username = this.findViewById(R.id.username);
-        final EditText password = this.findViewById(R.id.password);
-        final LinearLayout button = findViewById(R.id.create_account_button);
+        final EditText email = findViewById(R.id.email);
+        final EditText username = findViewById(R.id.username);
+        final EditText password = findViewById(R.id.password);
+        final ImageView button = findViewById(R.id.sign_in_button);
 
         //Operations are performed on views
         button.setOnClickListener(new View.OnClickListener() {

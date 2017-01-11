@@ -8,12 +8,10 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-<<<<<<< HEAD
         android:theme="@style/AppTheme">
 
-=======
         android:theme="@style/AppTheme.NoActionBar">
->>>>>>> 0e71458c70a9ea5ce7a22e1ba29ce516573625ed
+
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

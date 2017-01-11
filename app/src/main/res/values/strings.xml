@@ -14,11 +14,9 @@
     <!--Related to Create Account Activity-->
     <string name="create_username">Choose a username</string>
     <string name="existing_account">Have an account? Sign in</string>
-<<<<<<< HEAD
-=======
     <string name="create_account_label">Create an account</string>
->>>>>>> 0e71458c70a9ea5ce7a22e1ba29ce516573625ed
     <string name="create_acc_button">Create account</string>
+    <string name="sign_in_button">Sign in</string>
 
     <!--Related to User Profile Activity-->
     <string name="name_hint">Name</string>
