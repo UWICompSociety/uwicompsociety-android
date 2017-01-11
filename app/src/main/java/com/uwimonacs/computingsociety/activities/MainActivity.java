@@ -1,8 +1,10 @@
 package com.uwimonacs.computingsociety.activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
 import com.uwimonacs.computingsociety.R;
+import com.uwimonacs.computingsociety.fragments.BlogFragment;
 
 
 public class MainActivity extends AppCompatActivity {
