@@ -34,6 +34,12 @@ public class User extends Model {
     @Column(name="username")
     private String username;
 
+    @Column(name="position")
+    private String position;
+
+    @Column(name="image_url")
+    private String image_url;
+
     /**
      * Mandatory no arguments constructor. To be user by superclass
      */
@@ -48,13 +54,18 @@ public class User extends Model {
      * @param first_name First name
      * @param last_name Last name
      * @param username Username
+     * @param position Username
+     * @param image_url Username
      */
-    public User(int user_id, String email, String first_name, String last_name, String username) {
+    public User(int user_id, String email, String first_name, String last_name, String username,
+                String position, String image_url) {
         this.user_id = user_id;
         this.email = email;
         this.first_name = first_name;
         this.last_name = last_name;
         this.username = username;
+        this.position = position;
+        this.image_url = image_url;
     }
 
     /**
@@ -144,6 +155,42 @@ public class User extends Model {
      */
     public User setUsername(String username) {
         this.username = username;
+        return this;
+    }
+
+    /**
+     * Returns the position of this user in the Computing Society
+     * @return String position
+     */
+    public String getPosition() {
+        return position;
+    }
+
+    /**
+     * Provide a new position for this user
+     * @param position String position
+     * @return Returns the modified user object
+     */
+    public User setPosition(String position) {
+        this.position = position;
+        return this;
+    }
+
+    /**
+     * Returns the URL of this user's profile image
+     * @return String URL
+     */
+    public String getImage_url() {
+        return image_url;
+    }
+
+    /**
+     * Provide a new profile image URL for this user
+     * @param image_url String URL
+     * @return Returns the modified user object
+     */
+    public User setImage_url(String image_url) {
+        this.image_url = image_url;
         return this;
     }
 }

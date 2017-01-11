@@ -51,7 +51,7 @@
                 android:maxLines="3"
                 android:ellipsize="end"
                 android:foreground="?attr/selectableItemBackground"
-                tools:text="@string/read_more"/>
+                android:text="@string/read_more"/>
         </LinearLayout>
     </LinearLayout>
 </android.support.v7.widget.CardView>
