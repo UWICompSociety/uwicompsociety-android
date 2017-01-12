@@ -13,6 +13,7 @@
 
     <!--Related to Create Account Activity-->
     <string name="create_username">Choose a username</string>
+    <string name="prompt_password_confirm">Confirm password</string>
     <string name="existing_account">Have an account? Sign in</string>
     <string name="create_account_label">Create an account</string>
     <string name="create_acc_button">Create account</string>
