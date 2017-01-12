@@ -49,6 +49,10 @@
 
     <!--Related to Blogs-->
 
+    <!--Related to News -->
+    <string name="item_news_title">SIG project development starts next week</string>
+    <string name="news_content"></string>
+
     <!--Miscellaneous-->
     <string name="search">Search</string>
     <string name="read_more">READ MORE</string>
