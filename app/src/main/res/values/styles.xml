@@ -17,6 +17,5 @@
 
     <style name="AppTheme.NoActionBar.BlogPostActivity" />
 
-    <style name="AppTheme.NoActionBar.CreateAccount">
-    </style>
+    <style name="AppTheme.NoActionBar.CreateAccount" />
 </resources>
