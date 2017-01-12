@@ -3,6 +3,7 @@ package com.uwimonacs.computingsociety.fragments;
 import android.content.Context;
 import android.content.ReceiverCallNotAllowedException;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import com.uwimonacs.computingsociety.R;
 import com.uwimonacs.computingsociety.adapters.MembersListAdapter;
 import com.uwimonacs.computingsociety.models.Member;
+import com.uwimonacs.computingsociety.models.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,35 +24,27 @@ import java.util.List;
  */
 public class MembersListFragment extends Fragment {
 
-    Context context;
+    private View view;
     private MembersListAdapter adapter;
-    private RecyclerView recyclerview;
+    private RecyclerView recyclerView;
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        View rootView = (View)inflater.inflate(R.layout.members_list, container, false);
-        recyclerview = (RecyclerView)rootView.findViewById(R.id.memberRecycler);
-        adapter = new MembersListAdapter(getData());
-        recyclerview.setAdapter(adapter);
-        recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
-        return rootView;
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
+        view = inflater.inflate(R.layout.members_list, container, false);
+        initViews();
+        setUpViews();
+        return view;
     }
 
-    public void setContext(Context context) {
-        this.context = context;
+    public void initViews(){
+        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+        adapter = new MembersListAdapter(new ArrayList<User>(), getContext());
     }
 
-
-    public static List<Member> getData(){
-        List<Member> testData = new ArrayList<>();
-        String[] testNames = {"Matthew Stone", "Kenroy Gobourne", "Jourdan Dunkley", "John Smith"};
-        String[] testPositions = {"President", "Vice President", "Member", "Member"};
-        int[] testPicIds = {R.drawable.account_black, R.drawable.account_black, R.drawable.account_black
-                                     ,R.drawable.account_black};
-        for(int i=0;i<testNames.length && i<testPositions.length && i<testPicIds.length; i++){
-            Member testMember = new Member(testNames[i], testPositions[i], testPicIds[i]);
-            testData.add(testMember);
-        }
-        return testData;
+    public void setUpViews(){
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(adapter);
     }
 }
 
