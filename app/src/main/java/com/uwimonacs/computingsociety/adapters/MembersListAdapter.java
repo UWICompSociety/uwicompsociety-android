@@ -1,5 +1,7 @@
 package com.uwimonacs.computingsociety.adapters;
 
+import android.content.Context;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,8 +9,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
 import com.uwimonacs.computingsociety.R;
 import com.uwimonacs.computingsociety.models.Member;
+import com.uwimonacs.computingsociety.models.User;
 
 import org.w3c.dom.Text;
 
@@ -19,12 +23,13 @@ import java.util.List;
  */
 public class MembersListAdapter extends RecyclerView.Adapter<MembersListAdapter.MembersHolder> {
 
-    private List<Member> members;
+    private List<User> members;
+    private Context context;
 
 
-
-    public MembersListAdapter(List<Member> members){
+    public MembersListAdapter(List<User> members, Context context){
         this.members = members;
+        this.context = context;
     }
 
     @Override
@@ -35,11 +40,11 @@ public class MembersListAdapter extends RecyclerView.Adapter<MembersListAdapter.
 
     @Override
     public void onBindViewHolder(MembersHolder holder, int position) {
-        Member member = members.get(position);
-
-        holder.memberName.setText(member.getName());
+        User member = members.get(position);
+        String fullName = member.getFirst_name() + " " + member.getLast_name();
+        holder.memberName.setText(fullName);
         holder.memberPosition.setText(member.getPosition());
-        holder.memberPic.setImageResource(member.getPicId());
+        Picasso.with(context).load(Uri.parse(member.getImage_url())).into(holder.memberPic);
     }
 
     @Override
@@ -56,5 +61,10 @@ public class MembersListAdapter extends RecyclerView.Adapter<MembersListAdapter.
             memberPosition = (TextView)itemView.findViewById(R.id.memberPosition);
             memberPic = (ImageView)itemView.findViewById(R.id.memberPic);
         }
+    }
+
+    public void update (List<User> members){
+        this.members = members;
+        notifyDataSetChanged();
     }
 }
