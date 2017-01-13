@@ -3,6 +3,7 @@ package com.uwimonacs.computingsociety.models;
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
+import com.activeandroid.query.Select;
 
 /**
  * Created by jourdanDunkley on 1/6/2017.
@@ -145,5 +146,9 @@ public class BlogPost extends Model{
     public BlogPost setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
         return this;
+    }
+
+    public static BlogPost getPost(int post_id){
+        return new Select().from(BlogPost.class).where("id = ?", post_id).executeSingle();
     }
 }

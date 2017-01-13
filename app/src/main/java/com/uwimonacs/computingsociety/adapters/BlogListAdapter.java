@@ -1,6 +1,7 @@
 package com.uwimonacs.computingsociety.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import com.uwimonacs.computingsociety.R;
+import com.uwimonacs.computingsociety.activities.BlogPostActivity;
 import com.uwimonacs.computingsociety.models.BlogPost;
 
 import java.util.List;
@@ -19,11 +21,11 @@ import java.util.List;
  * @author sultanofcardio
  */
 
-public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.BlogHolder> {
+public class BlogListAdapter extends RecyclerView.Adapter<BlogListAdapter.BlogHolder> {
     private List<BlogPost> posts;
     private Context context;
 
-    public BlogAdapter(List<BlogPost> posts, Context context){
+    public BlogListAdapter(List<BlogPost> posts, Context context){
         this.posts = posts;
         this.context = context;
 
@@ -83,7 +85,8 @@ public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.BlogHolder> {
             readMore.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    //TODO: Launch an activity here
+                    //TODO: Pass intent extras
+                    context.startActivity(new Intent(context, BlogPostActivity.class));
                 }
             });
         }

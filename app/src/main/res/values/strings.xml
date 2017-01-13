@@ -35,7 +35,7 @@
     <string name="prompt_linkedin">LinkedIn url</string>
     <string name="prompt_snapchat">SnapChat url</string>
     <string name="prompt_github">GitHub url</string>
-    
+
     <!--Related to Navigation Drawer-->
     <string name="item_news_feed">News Feed</string>
     <string name="item_forums">Forums</string>
@@ -52,7 +52,7 @@
 
     <!--Related to News -->
     <string name="item_news_title">SIG project development starts next week</string>
-    <string name="news_content"></string>
+    <string name="image_content_description">Computing Society banner</string>
 
     <!--Miscellaneous-->
     <string name="search">Search</string>

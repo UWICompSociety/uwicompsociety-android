@@ -59,7 +59,7 @@ public class ProjectListAdapter extends RecyclerView.Adapter<ProjectListAdapter.
 
             name = (TextView)itemView.findViewById(R.id.project_title);
             description = (TextView)itemView.findViewById(R.id.project_description);
-            link = (TextView)itemView.findViewById(R.id.read_more);
+            link = (TextView)itemView.findViewById(R.id.project_read_more);
         }
     }
 
