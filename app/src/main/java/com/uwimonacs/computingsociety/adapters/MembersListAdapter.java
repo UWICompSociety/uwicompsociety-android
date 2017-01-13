@@ -11,10 +11,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import com.uwimonacs.computingsociety.R;
-import com.uwimonacs.computingsociety.models.Member;
 import com.uwimonacs.computingsociety.models.User;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -30,6 +27,8 @@ public class MembersListAdapter extends RecyclerView.Adapter<MembersListAdapter.
     public MembersListAdapter(List<User> members, Context context){
         this.members = members;
         this.context = context;
+
+        initExampleData();
     }
 
     @Override
@@ -41,14 +40,25 @@ public class MembersListAdapter extends RecyclerView.Adapter<MembersListAdapter.
     @Override
     public void onBindViewHolder(MembersHolder holder, int position) {
         User member = members.get(position);
-        String fullName = member.getFirst_name() + " " + member.getLast_name();
+        String fullName = member.getFirstName() + " " + member.getLastName();
         holder.memberName.setText(fullName);
         holder.memberPosition.setText(member.getPosition());
-        Picasso.with(context).load(Uri.parse(member.getImage_url())).into(holder.memberPic);
+        Picasso.with(context).load(Uri.parse(member.getImageUrl())).into(holder.memberPic);
     }
 
     @Override
     public int getItemCount(){return members.size();}
+
+    private void initExampleData(){
+        for(int i=0; i< 10; i++){
+            User user = new User(i, "someone@example.com",
+                    "John",  "Doe",
+                    "john_doe",
+                    "member",
+                    "android.resource://com.uwimonacs.computingsociety/drawable/profile");
+            this.members.add(user);
+        }
+    }
 
     class MembersHolder extends RecyclerView.ViewHolder{
         TextView memberName, memberPosition;
@@ -60,6 +70,13 @@ public class MembersListAdapter extends RecyclerView.Adapter<MembersListAdapter.
             memberName = (TextView)itemView.findViewById(R.id.memberName);
             memberPosition = (TextView)itemView.findViewById(R.id.memberPosition);
             memberPic = (ImageView)itemView.findViewById(R.id.memberPic);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // TODO: Launch profile activity of user
+                }
+            });
         }
     }
 

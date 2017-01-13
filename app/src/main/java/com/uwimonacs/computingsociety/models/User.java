@@ -19,17 +19,17 @@ import com.activeandroid.annotation.Table;
 @Table(name="User")
 public class User extends Model {
 
-    @Column(name="user_id")
-    private int user_id;
+    @Column(name="userId")
+    private int userId;
 
     @Column(name="email")
     private String email;
 
-    @Column(name="first_name")
-    private String first_name;
+    @Column(name="firstName")
+    private String firstName;
 
-    @Column(name="last_name")
-    private String last_name;
+    @Column(name="lastName")
+    private String lastName;
 
     @Column(name="username")
     private String username;
@@ -37,8 +37,8 @@ public class User extends Model {
     @Column(name="position")
     private String position;
 
-    @Column(name="image_url")
-    private String image_url;
+    @Column(name="imageUrl")
+    private String imageUrl;
 
     /**
      * Mandatory no arguments constructor. To be user by superclass
@@ -49,40 +49,40 @@ public class User extends Model {
 
     /**
      * Returns a new user
-     * @param user_id User id
+     * @param userId User id
      * @param email Email address
-     * @param first_name First name
-     * @param last_name Last name
+     * @param firstName First name
+     * @param lastName Last name
      * @param username Username
      * @param position Username
-     * @param image_url Username
+     * @param imageUrl Username
      */
-    public User(int user_id, String email, String first_name, String last_name, String username,
-                String position, String image_url) {
-        this.user_id = user_id;
+    public User(int userId, String email, String firstName, String lastName, String username,
+                String position, String imageUrl) {
+        this.userId = userId;
         this.email = email;
-        this.first_name = first_name;
-        this.last_name = last_name;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.username = username;
         this.position = position;
-        this.image_url = image_url;
+        this.imageUrl = imageUrl;
     }
 
     /**
      * Returns the user id of this user
      * @return integer user id
      */
-    public int getUser_id() {
-        return user_id;
+    public int getUserId() {
+        return userId;
     }
 
     /**
      * Provide a new user id for this user
-     * @param user_id integer user id
+     * @param userId integer user id
      * @return Returns the modified user object
      */
-    public User setUser_id(int user_id) {
-        this.user_id = user_id;
+    public User setUserId(int userId) {
+        this.userId = userId;
         return this;
     }
 
@@ -108,17 +108,17 @@ public class User extends Model {
      * Returns the first name of this user
      * @return String first name
      */
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
     /**
      * Provide a new first name for this user
-     * @param first_name String first name
+     * @param firstName String first name
      * @return Returns the modified user object
      */
-    public User setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public User setFirstName(String firstName) {
+        this.firstName = firstName;
         return this;
     }
 
@@ -126,17 +126,17 @@ public class User extends Model {
      * Returns the last name of this user
      * @return String last name
      */
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
     /**
      * Provide a new last name for this user
-     * @param last_name String last name
+     * @param lastName String last name
      * @return Returns the modified user object
      */
-    public User setLast_name(String last_name) {
-        this.last_name = last_name;
+    public User setLastName(String lastName) {
+        this.lastName = lastName;
         return this;
     }
 
@@ -180,17 +180,17 @@ public class User extends Model {
      * Returns the URL of this user's profile image
      * @return String URL
      */
-    public String getImage_url() {
-        return image_url;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
     /**
      * Provide a new profile image URL for this user
-     * @param image_url String URL
+     * @param imageUrl String URL
      * @return Returns the modified user object
      */
-    public User setImage_url(String image_url) {
-        this.image_url = image_url;
+    public User setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
         return this;
     }
 }

@@ -6,7 +6,9 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="8dp"
     android:layout_marginEnd="8dp"
-    android:layout_marginTop="8dp">
+    android:layout_marginTop="8dp"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackground">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,7 +17,7 @@
 
         <ImageView
             android:layout_width="60dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:id="@+id/memberPic"
             tools:src="@drawable/profile"
             android:layout_alignBottom="@+id/linearLayout"

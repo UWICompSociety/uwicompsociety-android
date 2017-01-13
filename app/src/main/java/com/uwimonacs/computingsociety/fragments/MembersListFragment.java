@@ -38,7 +38,7 @@ public class MembersListFragment extends Fragment {
     }
 
     public void initViews(){
-        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+        recyclerView = (RecyclerView) view.findViewById(R.id.memberRecycler);
         adapter = new MembersListAdapter(new ArrayList<User>(), getContext());
     }
 
