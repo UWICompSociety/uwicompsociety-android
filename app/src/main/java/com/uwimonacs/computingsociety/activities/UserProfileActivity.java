@@ -71,8 +71,9 @@ public class UserProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 switch (v.getId()){
                     case R.id.fab:
-                        Intent intent = new Intent(this, EditProfileActivity.class);
-                        startActivity(intent);
+                        //TODO: uncomment when EditProfileActivity class is implemented
+                        /*Intent intent = new Intent(this, EditProfileActivity.class);
+                        startActivity(intent);*/
                         break;
                     case R.id.view_blogs:
                         //TODO: implement blog click listener
