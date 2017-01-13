@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     private BlogFragment blogFragment;
     private MembersListFragment membersListFragment;
     private ProjectListFragment projectListFragment;
+    private int checkedItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +88,22 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else if (checkedItem != R.id.blogs){
+            // TODO: Change to news feed when implemented
+            checkedItem = R.id.blogs;
+            navigationView.setCheckedItem(checkedItem);
+            blogFragment = new BlogFragment();
+            setCurrentFragment(blogFragment, "Blogs");
+            drawerLayout.closeDrawers();
+        } else {
+            super.onBackPressed();
         }
     }
 
@@ -141,6 +158,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     }
 
     private void setDefaultFragment(){
+        checkedItem = R.id.news_feed;
         navigationView.setCheckedItem(R.id.news_feed);
         navigationView.getMenu().performIdentifierAction(R.id.news_feed, 0);
     }
@@ -168,27 +186,33 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.news_feed:
+                checkedItem = R.id.news_feed;
                 drawerLayout.closeDrawers();
                 return true;
             case R.id.forums:
+                checkedItem = R.id.forums;
                 drawerLayout.closeDrawers();
                 return true;
             case R.id.blogs:
+                checkedItem = R.id.blogs;
                 blogFragment = new BlogFragment();
                 setCurrentFragment(blogFragment, "Blogs");
                 drawerLayout.closeDrawers();
                 return true;
             case R.id.projects:
+                checkedItem = R.id.projects;
                 projectListFragment = new ProjectListFragment();
                 setCurrentFragment(projectListFragment, "Projects");
                 drawerLayout.closeDrawers();
                 return true;
             case R.id.members:
+                checkedItem = R.id.members;
                 membersListFragment = new MembersListFragment();
                 setCurrentFragment(membersListFragment, "Society Members");
                 drawerLayout.closeDrawers();
                 return true;
             case R.id.settings:
+                checkedItem = R.id.settings;
                 drawerLayout.closeDrawers();
                 return true;
             default:
