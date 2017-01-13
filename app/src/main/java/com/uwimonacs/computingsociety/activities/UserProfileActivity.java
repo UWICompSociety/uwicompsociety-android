@@ -6,6 +6,7 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,7 +20,8 @@ import com.uwimonacs.computingsociety.R;
  */
 
 public class UserProfileActivity extends AppCompatActivity {
-    private TextView name, email, username, github_username, blogs, discussions, projects;
+    private TextView name, email, username, github_username;
+    private CardView blogs, discussions, projects;
     private ActionBar actionBar;
     private Toolbar toolbar;
     private FloatingActionButton floatingActionButton;
@@ -28,6 +30,7 @@ public class UserProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_user_profile);
 
         initViews();
 
@@ -39,9 +42,9 @@ public class UserProfileActivity extends AppCompatActivity {
         email = (TextView)findViewById(R.id.email);
         username = (TextView)findViewById(R.id.username);
         github_username = (TextView)findViewById(R.id.github_username);
-        blogs = (TextView)findViewById(R.id.view_blogs);
-        discussions = (TextView)findViewById(R.id.view_discussions);
-        projects = (TextView)findViewById(R.id.view_projects);
+        blogs = (CardView) findViewById(R.id.view_blogs);
+        discussions = (CardView) findViewById(R.id.view_discussions);
+        projects = (CardView) findViewById(R.id.view_projects);
 
         facebook = (ImageView)findViewById(R.id.facebook_icon);
         snapchat = (ImageView)findViewById(R.id.snapchat_icon);
@@ -109,13 +112,13 @@ public class UserProfileActivity extends AppCompatActivity {
             }
         };
 
-        TextView [] textListners = {blogs, projects, discussions};
+        CardView [] cardViews = {blogs, projects, discussions};
         ImageView [] imgListeners = {facebook, snapchat, insta, github, twitter, linked};
 
         floatingActionButton.setOnClickListener(onClick);
 
-        for(TextView textView : textListners){
-            textView.setOnClickListener(onClick);
+        for(CardView cardView : cardViews){
+            cardView.setOnClickListener(onClick);
         }
 
         for(ImageView imageView : imgListeners){
