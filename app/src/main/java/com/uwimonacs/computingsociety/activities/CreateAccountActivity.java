@@ -68,8 +68,9 @@ public class CreateAccountActivity extends AppCompatActivity {
         haveAnAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO: Launch Sign in Activity
-                Snackbar.make(root, "Coming soon", Snackbar.LENGTH_LONG).show();
+                Intent myIntent = new Intent(CreateAccountActivity.this, LoginActivity.class);
+                startActivity(myIntent);
+                finish();
             }
         });
     }
