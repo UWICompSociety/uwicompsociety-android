@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         avatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                MainActivity.this.startActivity(new Intent(MainActivity.this, UserProfileAcivity.class));
+//                MainActivity.this.startActivity(new Intent(MainActivity.this, UserProfileActivity.class));
             }
         });
 
