@@ -34,7 +34,7 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsHo
     @Override
     public NewsHolder onCreateViewHolder(ViewGroup parent, int viewType){
         return new NewsHolder(LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.frag_news_feed, parent, false));
+                .inflate(R.layout.news_list_item, parent, false));
     }
 
     @Override
@@ -61,7 +61,8 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsHo
 
         for(int i=0; i < 3; i++){
             newsItem = new NewsItem(news_ids[i], user_ids[i], titles[i], context.getString(R.string.lorem_ipsum_text),
-                    "Today", context.getString(R.string.lorem_ipsum_text_double), String.valueOf(R.drawable.banner), 47);
+                    "Today", context.getString(R.string.lorem_ipsum_text_double),
+                    "android.resource://com.uwimonacs.computingsociety/drawable/banner", 47);
 
             newsItems.add(newsItem);
         }
