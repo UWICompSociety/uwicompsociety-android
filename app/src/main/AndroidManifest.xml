@@ -21,6 +21,9 @@
 
         <activity android:name=".activities.MainActivity" />
 
+        <activity android:name=".activities.UserProfileActivity"
+            android:theme="@style/AppTheme.NoActionBar.UserProfileActivity" />
+
 
         <!-- DB Name -->
         <meta-data
