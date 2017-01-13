@@ -95,12 +95,14 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:orientation="horizontal">
+
                         <ImageView
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="16dp"
                             android:layout_gravity="bottom"
                             app:srcCompat="@drawable/email_black"/>
+
                         <TextView
                             android:id="@+id/email"
                             android:layout_width="0dp"
@@ -280,37 +282,45 @@
         android:orientation="horizontal"
         android:layout_gravity="bottom"
         android:background="@color/colorPrimary">
+
         <ImageView
+            android:id="@+id/facebook_icon"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/facebook_box_white"
             android:foreground="?attr/selectableItemBackground"
             android:layout_weight="1"/>
+
         <ImageView
+            android:id="@+id/twitter_icon"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/twitter_box_white"
             android:foreground="?attr/selectableItemBackground"
             android:layout_weight="1"/>
         <ImageView
+            android:id="@+id/instagram_icon"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/instagram_white"
             android:foreground="?attr/selectableItemBackground"
             android:layout_weight="1"/>
         <ImageView
+            android:id="@+id/linkedin_icon"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/linkedin_box_white"
             android:foreground="?attr/selectableItemBackground"
             android:layout_weight="1"/>
         <ImageView
+            android:id="@+id/snapchat_icon"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/snapchat_white"
             android:foreground="?attr/selectableItemBackground"
             android:layout_weight="1"/>
         <ImageView
+            android:id="@+id/github_icon"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/github_box_white"
