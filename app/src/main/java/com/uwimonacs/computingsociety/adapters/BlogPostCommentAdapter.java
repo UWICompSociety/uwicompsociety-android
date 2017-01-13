@@ -84,6 +84,11 @@ public class BlogPostCommentAdapter extends RecyclerView.Adapter<BlogPostComment
         this.comments = comments;
     }
 
+    public void add(Comment comment){
+        this.comments.add(comment);
+        notifyDataSetChanged();
+    }
+
     private void initExampleData(){
         for(int i = 0; i < 10; i++){
             Comment comment = new Comment(i, 0, CommentType.BLOGPOST_COMMENT,
