@@ -19,6 +19,6 @@
 
     <style name="AppTheme.NoActionBar.CreateAccount" />
 
-    <style name="AppTheme.NoActionBar.Login"></style>
+    <style name="AppTheme.NoActionBar.Login" />
 
 </resources>

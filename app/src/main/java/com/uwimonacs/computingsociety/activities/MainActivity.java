@@ -23,6 +23,7 @@ import android.widget.TextView;
 import com.uwimonacs.computingsociety.R;
 import com.uwimonacs.computingsociety.fragments.BlogFragment;
 import com.uwimonacs.computingsociety.fragments.MembersListFragment;
+import com.uwimonacs.computingsociety.fragments.NewsListFragment;
 import com.uwimonacs.computingsociety.fragments.ProjectListFragment;
 import com.uwimonacs.computingsociety.models.User;
 
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     private User user;
 
     private BlogFragment blogFragment;
+    private NewsListFragment newsListFragment;
     private MembersListFragment membersListFragment;
     private ProjectListFragment projectListFragment;
     private int checkedItem;
@@ -95,12 +97,12 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     public void onBackPressed() {
         if(drawerLayout.isDrawerOpen(GravityCompat.START)){
             drawerLayout.closeDrawer(GravityCompat.START);
-        } else if (checkedItem != R.id.blogs){
+        } else if (checkedItem != R.id.news_feed){
             // TODO: Change to news feed when implemented
-            checkedItem = R.id.blogs;
+            checkedItem = R.id.news_feed;
             navigationView.setCheckedItem(checkedItem);
-            blogFragment = new BlogFragment();
-            setCurrentFragment(blogFragment, "Blogs");
+            newsListFragment = new NewsListFragment();
+            setCurrentFragment(newsListFragment, "News Feed");
             drawerLayout.closeDrawers();
         } else {
             super.onBackPressed();
@@ -187,6 +189,8 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         switch (item.getItemId()){
             case R.id.news_feed:
                 checkedItem = R.id.news_feed;
+                newsListFragment = new NewsListFragment();
+                setCurrentFragment(newsListFragment, "News Feed");
                 drawerLayout.closeDrawers();
                 return true;
             case R.id.forums:
