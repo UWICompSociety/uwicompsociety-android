@@ -35,7 +35,7 @@
     <string name="prompt_linkedin">LinkedIn url</string>
     <string name="prompt_snapchat">SnapChat url</string>
     <string name="prompt_github">GitHub url</string>
-    
+
     <!--Related to Navigation Drawer-->
     <string name="item_news_feed">News Feed</string>
     <string name="item_forums">Forums</string>

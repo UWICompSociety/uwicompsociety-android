@@ -1,0 +1,136 @@
+package com.uwimonacs.computingsociety.activities;
+
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+import com.uwimonacs.computingsociety.R;
+import com.uwimonacs.computingsociety.adapters.BlogPostCommentAdapter;
+import com.uwimonacs.computingsociety.models.Blog;
+import com.uwimonacs.computingsociety.models.BlogPost;
+import com.uwimonacs.computingsociety.models.Comment;
+
+import java.util.ArrayList;
+
+@SuppressWarnings("ConstantConditions")
+public class BlogPostActivity extends AppCompatActivity {
+    private Toolbar toolbar;
+    private ImageView image, btnLike, btnDislike;
+    private TextView title, message, date, numLikes, numDislikes;
+    private RecyclerView comments;
+    private BlogPostCommentAdapter adapter;
+    private BlogPost post;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_blog_post);
+
+        initViews();
+
+        setUpViews();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void initViews(){
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        image = (ImageView) findViewById(R.id.image);
+        btnLike = (ImageView) findViewById(R.id.btn_like);
+        btnDislike = (ImageView) findViewById(R.id.btn_dislike);
+        title = (TextView) findViewById(R.id.title);
+        message = (TextView) findViewById(R.id.message);
+        date = (TextView) findViewById(R.id.date);
+        numLikes = (TextView) findViewById(R.id.num_like);
+        numDislikes = (TextView) findViewById(R.id.num_dislike);
+        comments = (RecyclerView) findViewById(R.id.comments);
+        adapter = new BlogPostCommentAdapter(this, new ArrayList<Comment>());
+//        post = BlogPost.getPost(getIntent().getIntExtra("post_id", 0));
+        post = sampleBlogPost();
+    }
+
+    private void setUpViews(){
+        setUpActionBar();
+
+        populateViews();
+
+        btnLike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO: Fix bug with multiple likes + un-liking
+                int likes = post.getNum_likes() + 1;
+                post.setNum_likes(likes);
+                numLikes.setText(String.valueOf(likes));
+
+            }
+        });
+
+        btnDislike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO: Fix bug with multiple dislikes + un-disliking
+                int dislikes = post.getNum_dislikes() + 1;
+                post.setNum_dislikes(dislikes);
+                numDislikes.setText(String.valueOf(dislikes));
+            }
+        });
+
+        setUpRecyclerView();
+    }
+
+    private void setUpActionBar(){
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+//        Blog blog = Blog.getBlog(post.getBlog_id());
+        Blog blog = sampleBlog();
+        getSupportActionBar().setTitle(blog.getTopic());
+    }
+
+    private void populateViews(){
+        Picasso.with(this).load(post.getImageUrl()).into(image);
+        title.setText(post.getTitle());
+        message.setText(post.getMessage());
+        date.setText(post.getDate());
+        numLikes.setText(String.valueOf(post.getNum_likes()));
+        numDislikes.setText(String.valueOf(post.getNum_dislikes()));
+    }
+
+    private void setUpRecyclerView(){
+        comments.setLayoutManager(new LinearLayoutManager(this));
+        comments.setAdapter(adapter);
+        comments.setNestedScrollingEnabled(false);
+    }
+
+    @NonNull
+    private BlogPost sampleBlogPost(){
+        return new BlogPost(0, 0, 0, "Lorem Ipsum",
+                "07/01/2017 at 12:00pm",
+                getString(R.string.lorem_ipsum_text_double),
+                "http://www.walltor.com/images/wallpaper/lorem-ipsum-3179.jpg",
+                0, 5, 0);
+    }
+
+    @NonNull
+    private Blog sampleBlog(){
+        return new Blog(0, 0, "07/01/2017 at 12:00pm",
+                "Android development", 1);
+    }
+}

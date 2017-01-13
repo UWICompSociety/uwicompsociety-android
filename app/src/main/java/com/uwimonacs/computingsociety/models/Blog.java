@@ -3,6 +3,7 @@ package com.uwimonacs.computingsociety.models;
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
+import com.activeandroid.query.Select;
 
 /**
  * Created by jourdanDunkley on 1/6/2017.
@@ -77,5 +78,9 @@ public class Blog extends Model {
     public Blog setNum_posts(int num_posts) {
         this.num_posts = num_posts;
         return this;
+    }
+
+    public static Blog getBlog(int blog_id){
+        return new Select().from(Blog.class).where("id = ?", blog_id).executeSingle();
     }
 }

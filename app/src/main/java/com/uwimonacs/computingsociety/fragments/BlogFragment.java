@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.uwimonacs.computingsociety.R;
-import com.uwimonacs.computingsociety.adapters.BlogAdapter;
+import com.uwimonacs.computingsociety.adapters.BlogListAdapter;
 import com.uwimonacs.computingsociety.models.BlogPost;
 
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class BlogFragment extends Fragment {
     private View view;
     private RecyclerView recyclerView;
-    private BlogAdapter adapter;
+    private BlogListAdapter adapter;
 
     @Nullable
     @Override
@@ -40,7 +40,7 @@ public class BlogFragment extends Fragment {
 
     public void initViews(){
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-        adapter = new BlogAdapter(new ArrayList<BlogPost>(), getContext());
+        adapter = new BlogListAdapter(new ArrayList<BlogPost>(), getContext());
     }
 
     public void setUpViews(){

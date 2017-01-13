@@ -3,6 +3,7 @@ package com.uwimonacs.computingsociety.models;
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
+import com.activeandroid.query.Select;
 
 /**
  * @author sultanofcardio
@@ -192,5 +193,9 @@ public class User extends Model {
     public User setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
         return this;
+    }
+
+    public static User getUser(int user_id){
+        return new Select().from(User.class).where("id = ?", user_id).executeSingle();
     }
 }
