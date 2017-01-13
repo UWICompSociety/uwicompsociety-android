@@ -174,3 +174,5 @@ $ git push -u origin <branch_name>
   * [@sultanofcardio](https://github.com/sultanofcardio)
   * [@jourdanDunkley](https://github.com/jourdanDunkley)
   * [@don1998](https://github.com/don1998)
+  * [@badHax](https://github.com/badHax)
+  * [@Wilson-Wilson](https://github.com/Wilson-Wilson)
