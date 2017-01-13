@@ -2,9 +2,11 @@ package com.uwimonacs.computingsociety.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -19,6 +21,7 @@ import com.uwimonacs.computingsociety.R;
 public class UserProfileActivity extends AppCompatActivity {
     private TextView name, email, username, github_username, blogs, discussions, projects;
     private ActionBar actionBar;
+    private Toolbar toolbar;
     private FloatingActionButton floatingActionButton;
     private ImageView facebook, snapchat, github, linked, insta, twitter;
 
@@ -47,6 +50,9 @@ public class UserProfileActivity extends AppCompatActivity {
         insta = (ImageView)findViewById(R.id.instagram_icon);
         twitter = (ImageView)findViewById(R.id.twitter_icon);
 
+        toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         actionBar = getSupportActionBar();
 
         floatingActionButton = (FloatingActionButton)findViewById(R.id.fab);
@@ -57,7 +63,7 @@ public class UserProfileActivity extends AppCompatActivity {
         email.setText("jDoe@examole.com");
         username.setText("JDizzle");
         github_username.setText("JH_Doe");
-        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         setUpListners();
     }
@@ -70,7 +76,7 @@ public class UserProfileActivity extends AppCompatActivity {
                 switch (v.getId()){
                     case R.id.fab:
                         //TODO: uncomment when EditProfileActivity class is implemented
-                        /*Intent intent = new Intent(this, EditProfileActivity.class);
+                        /*Intent intent = new Intent(UserProfileActivity.this, EditProfileActivity.class);
                         startActivity(intent);*/
                         break;
                     case R.id.view_blogs:
