@@ -1,6 +1,7 @@
 package com.uwimonacs.computingsociety.adapters;
 
 import android.content.Context;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
 import com.uwimonacs.computingsociety.R;
 import com.uwimonacs.computingsociety.models.NewsItem;
 
@@ -38,6 +40,11 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsHo
     @Override
     public void onBindViewHolder(NewsHolder newsHolder, int position){
         NewsItem newsItem = newsItems.get(newsHolder.getAdapterPosition());
+
+        newsHolder.title.setText(newsItem.getTitle());
+        newsHolder.summary.setText(newsItem.getSummary());
+
+        Picasso.with(context).load(Uri.parse(newsItem.getImage_url())).into(newsHolder.news_image);
     }
 
     @Override
