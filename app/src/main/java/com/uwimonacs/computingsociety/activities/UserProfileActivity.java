@@ -50,8 +50,6 @@ public class UserProfileActivity extends AppCompatActivity {
         actionBar = getSupportActionBar();
 
         floatingActionButton = (FloatingActionButton)findViewById(R.id.fab);
-
-        facebook = (ImageView)findViewById(R.id.f)
     }
 
     private void setUpViews(){
