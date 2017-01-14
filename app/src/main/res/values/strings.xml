@@ -55,6 +55,9 @@
     <string name="image_content_description">Computing Society banner</string>
 
     <!--Miscellaneous-->
+    <string name="sample_date">07/01/2017 12:00pm</string>
+    <string name="sample">Sample news item topic</string>
+    <string name="comment">Post a comment...</string>
     <string name="search">Search</string>
     <string name="save">Save</string>
     <string name="read_more">READ MORE</string>

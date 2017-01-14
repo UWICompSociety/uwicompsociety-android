@@ -11,9 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -31,6 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="42dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
                 android:gravity="center_vertical"
                 android:textColor="@android:color/black"
                 android:textStyle="bold"
@@ -71,10 +74,12 @@
                 android:gravity="center_vertical"
                 android:textSize="16sp"
                 android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
                 tools:text="0"/>
             <ImageView
                 android:id="@+id/btn_dislike"
                 android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 app:srcCompat="@drawable/thumb_down"
@@ -86,6 +91,7 @@
                 android:gravity="center_vertical"
                 android:textSize="16sp"
                 android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
                 tools:text="0"/>
         </LinearLayout>
     </LinearLayout>
