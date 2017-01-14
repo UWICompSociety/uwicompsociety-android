@@ -1,19 +1,25 @@
 package com.uwimonacs.computingsociety.activities;
 
+import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import com.uwimonacs.computingsociety.R;
 import com.uwimonacs.computingsociety.adapters.BlogPostCommentAdapter;
+import com.uwimonacs.computingsociety.constants.CommentType;
 import com.uwimonacs.computingsociety.models.Blog;
 import com.uwimonacs.computingsociety.models.BlogPost;
 import com.uwimonacs.computingsociety.models.Comment;
@@ -25,7 +31,10 @@ public class BlogPostActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private ImageView image, btnLike, btnDislike;
     private TextView title, message, date, numLikes, numDislikes;
+    private EditText replyEditText;
+    private FloatingActionButton replyButton;
     private RecyclerView comments;
+    private NestedScrollView scrollView;
     private BlogPostCommentAdapter adapter;
     private BlogPost post;
 
@@ -60,7 +69,10 @@ public class BlogPostActivity extends AppCompatActivity {
         date = (TextView) findViewById(R.id.date);
         numLikes = (TextView) findViewById(R.id.num_like);
         numDislikes = (TextView) findViewById(R.id.num_dislike);
+        replyEditText = (EditText) findViewById(R.id.reply_edittext);
+        replyButton = (FloatingActionButton) findViewById(R.id.reply_button);
         comments = (RecyclerView) findViewById(R.id.comments);
+        scrollView = (NestedScrollView) findViewById(R.id.scroll_view);
         adapter = new BlogPostCommentAdapter(this, new ArrayList<Comment>());
 //        post = BlogPost.getPost(getIntent().getIntExtra("post_id", 0));
         post = sampleBlogPost();
@@ -92,6 +104,8 @@ public class BlogPostActivity extends AppCompatActivity {
             }
         });
 
+        handleComment();
+
         setUpRecyclerView();
     }
 
@@ -117,6 +131,26 @@ public class BlogPostActivity extends AppCompatActivity {
         comments.setLayoutManager(new LinearLayoutManager(this));
         comments.setAdapter(adapter);
         comments.setNestedScrollingEnabled(false);
+    }
+
+    private void handleComment(){
+        replyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String reply = replyEditText.getText().toString();
+                if(!TextUtils.isEmpty(reply)){
+                    replyEditText.setText("");
+                    adapter.add(new Comment(adapter.getItemCount(), 0, CommentType.BLOGPOST_COMMENT,
+                            0, reply, "01/01/2017 at 12:00pm", 0, 0));
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            scrollView.fullScroll(View.FOCUS_DOWN);
+                        }
+                    }, 100);
+                }
+            }
+        });
     }
 
     @NonNull

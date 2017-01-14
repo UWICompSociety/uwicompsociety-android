@@ -52,7 +52,7 @@
 
     <!--Related to News -->
     <string name="item_news_title">SIG project development starts next week</string>
-    <string name="news_content"></string>
+    <string name="image_content_description">Computing Society banner</string>
 
     <!--Miscellaneous-->
     <string name="search">Search</string>
