@@ -40,8 +40,11 @@
             android:name="AA_MODELS"
             android:value="" />
 
-        <activity android:name=".activities.BlogPostActivity"
-            android:theme="@style/AppTheme.NoActionBar.BlogPostActivity"/>
+        <activity
+            android:name=".activities.BlogPostActivity"
+            android:theme="@style/AppTheme.NoActionBar.BlogPostActivity" />
+        <activity android:name=".activities.EditProfileActivity"
+            android:theme="@style/AppTheme.NoActionBar.EditProfile"/>
     </application>
 
 </manifest>

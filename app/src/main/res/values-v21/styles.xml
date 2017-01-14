@@ -19,4 +19,8 @@
         <item name="android:statusBarColor">@color/colorPrimary</item>
     </style>
 
+    <style name="AppTheme.NoActionBar.EditProfile">
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+    </style>
+
 </resources>
