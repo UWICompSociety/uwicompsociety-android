@@ -28,6 +28,14 @@
             android:name=".activities.UserProfileActivity"
             android:theme="@style/AppTheme.NoActionBar.UserProfileActivity" />
 
+        <!--<activity android:name=".activities.NewsItemActivity">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+
+
         <!-- DB Name -->
         <meta-data
             android:name="AA_DB_NAME"
