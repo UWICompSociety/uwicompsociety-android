@@ -35,6 +35,12 @@ public class NewsItem extends Model {
     @Column(name="num_comments")
     private int num_comments;
 
+    @Column(name="num_likes")
+    private int num_likes;
+
+    @Column(name="num-dislikes")
+    private int num_dislikes;
+
     public NewsItem() {
     }
 
@@ -120,5 +126,29 @@ public class NewsItem extends Model {
     public NewsItem setImage_url(String image_url) {
         this.image_url = image_url;
         return this;
+    }
+
+    public int getNum_likes() {
+        return num_likes;
+    }
+
+    public void setNum_likes(int num_likes) {
+        this.num_likes = num_likes;
+    }
+
+    public int getNum_dislikes() {
+        return num_dislikes;
+    }
+
+    public void setNum_dislikes(int num_dislikes) {
+        this.num_dislikes = num_dislikes;
+    }
+
+    public String getImageUrl() {
+        return image_url;
+    }
+
+    public String getMessage() {
+        return body;
     }
 }

@@ -18,17 +18,13 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import com.uwimonacs.computingsociety.R;
-import com.uwimonacs.computingsociety.adapters.BlogPostCommentAdapter;
+import com.uwimonacs.computingsociety.adapters.NewsPostCommentAdapter;
 import com.uwimonacs.computingsociety.constants.CommentType;
 import com.uwimonacs.computingsociety.models.Blog;
-import com.uwimonacs.computingsociety.models.BlogPost;
 import com.uwimonacs.computingsociety.models.Comment;
+import com.uwimonacs.computingsociety.models.NewsItem;
 
 import java.util.ArrayList;
-
-/**
- * Created by Doneil Scotland on 14/01/2017.
- */
 
 @SuppressWarnings("ConstantConditions")
 public class NewsItemActivity extends AppCompatActivity {
@@ -39,8 +35,8 @@ public class NewsItemActivity extends AppCompatActivity {
     private FloatingActionButton replyButton;
     private RecyclerView comments;
     private NestedScrollView scrollView;
-    private BlogPostCommentAdapter adapter;
-    private BlogPost post;
+    private NewsPostCommentAdapter adapter;
+    private NewsItem post;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,9 +73,8 @@ public class NewsItemActivity extends AppCompatActivity {
         replyButton = (FloatingActionButton) findViewById(R.id.reply_button);
         comments = (RecyclerView) findViewById(R.id.comments);
         scrollView = (NestedScrollView) findViewById(R.id.scrollview);
-        adapter = new BlogPostCommentAdapter(this, new ArrayList<Comment>());
-//        post = BlogPost.getPost(getIntent().getIntExtra("post_id", 0));
-        post = sampleBlogPost();
+        adapter = new NewsPostCommentAdapter(this, new ArrayList<Comment>());
+        post = sampleNewsPost();
     }
 
     private void setUpViews(){
@@ -90,7 +85,7 @@ public class NewsItemActivity extends AppCompatActivity {
         btnLike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO: Fix bug with multiple likes + un-liking
+
                 int likes = post.getNum_likes() + 1;
                 post.setNum_likes(likes);
                 numLikes.setText(String.valueOf(likes));
@@ -101,7 +96,7 @@ public class NewsItemActivity extends AppCompatActivity {
         btnDislike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO: Fix bug with multiple dislikes + un-disliking
+
                 int dislikes = post.getNum_dislikes() + 1;
                 post.setNum_dislikes(dislikes);
                 numDislikes.setText(String.valueOf(dislikes));
@@ -117,7 +112,6 @@ public class NewsItemActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-//        Blog blog = Blog.getBlog(post.getBlog_id());
         Blog blog = sampleBlog();
         getSupportActionBar().setTitle(blog.getTopic());
     }
@@ -158,18 +152,17 @@ public class NewsItemActivity extends AppCompatActivity {
     }
 
     @NonNull
-    private BlogPost sampleBlogPost(){
-        return new BlogPost(0, 0, 0, "Lorem Ipsum",
+    private NewsItem sampleNewsPost(){
+        return new NewsItem(0, 0, "Sample News Topic","Sample Summary",
                 "07/01/2017 at 12:00pm",
                 getString(R.string.lorem_ipsum_text_double),
-                "http://www.walltor.com/images/wallpaper/lorem-ipsum-3179.jpg",
-                0, 5, 0);
+                "http://www.walltor.com/images/wallpaper/lorem-ipsum-3179.jpg",5);
     }
 
     @NonNull
     private Blog sampleBlog(){
         return new Blog(0, 0, "07/01/2017 at 12:00pm",
-                "Android development", 1);
+                "News Feed", 1);
     }
 }
 
