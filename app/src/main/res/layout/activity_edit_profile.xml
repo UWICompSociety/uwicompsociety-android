@@ -21,13 +21,13 @@
                 <ImageView
                     android:id="@+id/avatar"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:minHeight="200dp"
+                    android:layout_height="250dp"
                     android:scaleType="centerCrop"
                     android:fitsSystemWindows="true"
                     app:layout_collapseMode="pin"
                     android:src="@drawable/profile_avatar"/>
                 <ImageView
+                    android:id="@+id/camera_button"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_margin="16dp"
@@ -38,22 +38,24 @@
                     android:foreground="?android:selectableItemBackground"/>
             </android.support.design.widget.CoordinatorLayout>
             <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
+                app:title=" "
                 android:background="@android:color/transparent"/>
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#e5e5e5"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
         <LinearLayout
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="#e5e5e5"
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginRight="8dp"
@@ -92,7 +94,7 @@
                             android:textColorHint="#667279"
                             android:textSize="14sp"
                             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                            android:text="@string/name_hint"/>
+                            android:hint="@string/name_hint"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -135,7 +137,7 @@
                             android:textColorHint="#667279"
                             android:textSize="14sp"
                             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                            android:text="@string/email_hint"/>
+                            android:hint="@string/email_hint"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -178,7 +180,7 @@
                             android:textColorHint="#667279"
                             android:textSize="14sp"
                             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                            android:text="@string/username_hint"/>
+                            android:hint="@string/username_hint"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -221,7 +223,7 @@
                             android:textColorHint="#667279"
                             android:textSize="14sp"
                             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                            android:text="@string/github_username_hint"/>
+                            android:hint="@string/github_username_hint"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -276,7 +278,7 @@
                             android:textColorHint="#667279"
                             android:textSize="14sp"
                             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                            android:text="@string/prompt_facebook"/>
+                            android:hint="@string/prompt_facebook"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -319,7 +321,7 @@
                             android:textColorHint="#667279"
                             android:textSize="14sp"
                             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                            android:text="@string/prompt_twitter"/>
+                            android:hint="@string/prompt_twitter"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -362,7 +364,7 @@
                             android:textColorHint="#667279"
                             android:textSize="14sp"
                             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                            android:text="@string/prompt_instagram"/>
+                            android:hint="@string/prompt_instagram"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -405,7 +407,7 @@
                             android:textColorHint="#667279"
                             android:textSize="14sp"
                             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                            android:text="@string/prompt_linkedin"/>
+                            android:hint="@string/prompt_linkedin"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -448,7 +450,7 @@
                             android:textColorHint="#667279"
                             android:textSize="14sp"
                             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                            android:text="@string/prompt_snapchat"/>
+                            android:hint="@string/prompt_snapchat"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -491,7 +493,7 @@
                             android:textColorHint="#667279"
                             android:textSize="14sp"
                             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                            android:text="@string/prompt_github"/>
+                            android:hint="@string/prompt_github"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
