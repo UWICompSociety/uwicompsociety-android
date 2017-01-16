@@ -7,8 +7,8 @@ import com.activeandroid.annotation.Table;
 /**
  * Created by jourdaDunkley on 1/6/2017.
  */
-@Table(name="Forum")
-public class Forum extends Model {
+@Table(name="ForumPost")
+public class ForumPost extends Model {
 
     @Column(name="forum_id")
     private int forum_id;
@@ -34,9 +34,9 @@ public class Forum extends Model {
     @Column(name="num_dislikes")
     private int num_dislikes;
 
-    public Forum(){}
-    public Forum(int forum_id, int user_id, String topic, String date, String message, int num_comments,
-                 int num_likes, int num_dislikes){
+    public ForumPost(){}
+    public ForumPost(int forum_id, int user_id, String topic, String date, String message, int num_comments,
+                     int num_likes, int num_dislikes){
         this.forum_id = forum_id;
         this.user_id = user_id;
         this.topic = topic;
@@ -51,7 +51,7 @@ public class Forum extends Model {
         return forum_id;
     }
 
-    public Forum setForum_id(int forum_id) {
+    public ForumPost setForum_id(int forum_id) {
         this.forum_id = forum_id;
         return this;
     }
@@ -60,7 +60,7 @@ public class Forum extends Model {
         return user_id;
     }
 
-    public Forum setUser_id(int user_id) {
+    public ForumPost setUser_id(int user_id) {
         this.user_id = user_id;
         return this;
     }
@@ -69,7 +69,7 @@ public class Forum extends Model {
         return topic;
     }
 
-    public Forum setTopic(String topic) {
+    public ForumPost setTopic(String topic) {
         this.topic = topic;
         return this;
     }
@@ -78,7 +78,7 @@ public class Forum extends Model {
         return date;
     }
 
-    public Forum setDate(String date) {
+    public ForumPost setDate(String date) {
         this.date = date;
         return this;
     }
@@ -87,7 +87,7 @@ public class Forum extends Model {
         return message;
     }
 
-    public Forum setMessage(String message) {
+    public ForumPost setMessage(String message) {
         this.message = message;
         return this;
     }
@@ -96,7 +96,7 @@ public class Forum extends Model {
         return num_comments;
     }
 
-    public Forum setNum_comments(int num_comments) {
+    public ForumPost setNum_comments(int num_comments) {
         this.num_comments = num_comments;
         return this;
     }
@@ -105,7 +105,7 @@ public class Forum extends Model {
         return num_likes;
     }
 
-    public Forum setNum_likes(int num_likes) {
+    public ForumPost setNum_likes(int num_likes) {
         this.num_likes = num_likes;
         return this;
     }
@@ -114,7 +114,7 @@ public class Forum extends Model {
         return num_dislikes;
     }
 
-    public Forum setNum_dislikes(int num_dislikes) {
+    public ForumPost setNum_dislikes(int num_dislikes) {
         this.num_dislikes = num_dislikes;
         return this;
     }

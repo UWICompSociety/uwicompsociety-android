@@ -24,6 +24,7 @@ import android.widget.TextView;
 
 import com.uwimonacs.computingsociety.R;
 import com.uwimonacs.computingsociety.fragments.BlogFragment;
+import com.uwimonacs.computingsociety.fragments.ForumTabsFragment;
 import com.uwimonacs.computingsociety.fragments.MembersListFragment;
 import com.uwimonacs.computingsociety.fragments.NewsListFragment;
 import com.uwimonacs.computingsociety.fragments.ProjectListFragment;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
     private BlogFragment blogFragment;
     private NewsListFragment newsListFragment;
+    private ForumTabsFragment forumTabsFragment;
     private MembersListFragment membersListFragment;
     private ProjectListFragment projectListFragment;
     private int checkedItem;
@@ -205,6 +207,8 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                 return true;
             case R.id.forums:
                 checkedItem = R.id.forums;
+                forumTabsFragment = new ForumTabsFragment();
+                setCurrentFragment(forumTabsFragment, "Forums");
                 drawerLayout.closeDrawers();
                 return true;
             case R.id.blogs:
