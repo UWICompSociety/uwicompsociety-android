@@ -12,8 +12,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-
-        <activity android:name=".activities.LoginActivity"
+        <activity
+            android:name=".activities.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,19 +21,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activities.CreateAccountActivity"
             android:theme="@style/AppTheme.NoActionBar.CreateAccount" />
-
         <activity android:name=".activities.MainActivity" />
         <activity
             android:name=".activities.UserProfileActivity"
             android:theme="@style/AppTheme.NoActionBar.UserProfileActivity" />
-
-        <activity android:name=".activities.NewsItemActivity"
-            android:theme="@style/AppTheme.NoActionBar.NewsItem"/>
-
+        <activity
+            android:name=".activities.NewsItemActivity"
+            android:theme="@style/AppTheme.NoActionBar.NewsItem" />
 
         <!-- DB Name -->
         <meta-data
@@ -53,8 +50,12 @@
         <activity
             android:name=".activities.BlogPostActivity"
             android:theme="@style/AppTheme.NoActionBar.BlogPostActivity" />
-        <activity android:name=".activities.EditProfileActivity"
-            android:theme="@style/AppTheme.NoActionBar.EditProfile"/>
+        <activity
+            android:name=".activities.EditProfileActivity"
+            android:theme="@style/AppTheme.NoActionBar.EditProfile" />
+
+        <activity android:name=".activities.ForumPostActivity"
+            android:theme="@style/AppTheme.NoActionBar.ForumPost"/>
     </application>
 
 </manifest>

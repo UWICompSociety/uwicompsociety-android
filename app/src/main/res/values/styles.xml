@@ -17,6 +17,8 @@
 
     <style name="AppTheme.NoActionBar.BlogPostActivity" />
 
+    <style name="AppTheme.NoActionBar.ForumPost" />
+
     <style name="AppTheme.NoActionBar.NewsItem" />
 
     <style name="AppTheme.NoActionBar.CreateAccount" />

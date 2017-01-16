@@ -2,6 +2,7 @@ package com.uwimonacs.computingsociety.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.uwimonacs.computingsociety.R;
+import com.uwimonacs.computingsociety.activities.ForumPostActivity;
 import com.uwimonacs.computingsociety.models.ForumPost;
 
 import java.util.ArrayList;
@@ -60,6 +62,14 @@ public class ForumListAdapter extends RecyclerView.Adapter<ForumListAdapter.Foru
             public void onClick(View view) {
                 // TODO: Launch user profile activity
                 Snackbar.make(view, "Coming soon", Snackbar.LENGTH_LONG).show();
+            }
+        });
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //TODO: Pass bundle
+                context.startActivity(new Intent(context, ForumPostActivity.class));
             }
         });
     }
