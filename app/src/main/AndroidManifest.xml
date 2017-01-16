@@ -53,9 +53,12 @@
         <activity
             android:name=".activities.EditProfileActivity"
             android:theme="@style/AppTheme.NoActionBar.EditProfile" />
+        <activity
+            android:name=".activities.ForumPostActivity"
+            android:theme="@style/AppTheme.NoActionBar.ForumPost" />
 
-        <activity android:name=".activities.ForumPostActivity"
-            android:theme="@style/AppTheme.NoActionBar.ForumPost"/>
+        <activity android:name=".activities.CreateForumPostActivity"
+            android:theme="@style/AppTheme.NoActionBar.CreateForumPost"/>
     </application>
 
 </manifest>

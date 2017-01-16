@@ -54,6 +54,12 @@
     <string name="item_news_title">SIG project development starts next week</string>
     <string name="image_content_description">Computing Society banner</string>
 
+    <!--Related to CreateForumPost-->
+    <string name="activity_create_forum_post">Make A Post</string>
+    <string name="action_post">Post</string>
+    <string name="title_hint">Title</string>
+    <string name="message_hint">Message</string>
+
     <!--Miscellaneous-->
     <string name="sample_date">07/01/2017 12:00pm</string>
     <string name="sample">Sample news item topic</string>

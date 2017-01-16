@@ -46,6 +46,8 @@
 
                         <TextView
                             android:id="@+id/title"
+                            android:transitionName="title"
+                            tools:targetApi="lollipop"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textSize="20sp"
@@ -122,6 +124,8 @@
 
                         <TextView
                             android:id="@+id/message"
+                            android:transitionName="message"
+                            tools:targetApi="lollipop"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginTop="8dp"

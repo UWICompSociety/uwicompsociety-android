@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.uwimonacs.computingsociety.R;
+import com.uwimonacs.computingsociety.activities.CreateForumPostActivity;
 import com.uwimonacs.computingsociety.activities.EditProfileActivity;
 import com.uwimonacs.computingsociety.adapters.ForumTabAdapter;
 import com.uwimonacs.computingsociety.util.ScreenUtils;
@@ -53,7 +54,7 @@ public class ForumTabsFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 // TODO: Check for user profile completeness
-//                startActivity(new Intent(getContext(), CreateForumPostActivity.class));
+                startActivity(new Intent(getContext(), CreateForumPostActivity.class));
             }
         });
     }

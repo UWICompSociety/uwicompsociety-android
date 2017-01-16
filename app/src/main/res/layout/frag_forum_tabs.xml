@@ -18,6 +18,7 @@
             app:tabIndicatorColor="@android:color/white"
             app:tabTextAppearance="?android:textAppearanceMedium"
             app:tabSelectedTextColor="@android:color/white"
+            android:theme="@style/AppTheme.AppBarOverlay"
             app:tabGravity="fill"
             app:tabMode="fixed" />
 
