@@ -30,7 +30,7 @@ public class ScreenUtils {
 
     @SuppressWarnings("unchecked")
     public static void makeSharedElementTransition(Context context, Class targetClass,
-                                                   Bundle extras, View... views){
+                                                   Bundle extras, boolean finish, View... views){
         Intent intent = new Intent(context, targetClass);
         if(extras != null)
             intent.putExtras(extras);
@@ -42,7 +42,12 @@ public class ScreenUtils {
             ActivityOptionsCompat options =
                     ActivityOptionsCompat.makeSceneTransitionAnimation((AppCompatActivity)context, pairs);
             context.startActivity(intent, options.toBundle());
-        } else
+            if(finish)
+                ((AppCompatActivity)context).finish();
+        } else {
             context.startActivity(intent);
+            if(finish)
+                ((AppCompatActivity)context).finish();
+        }
     }
 }

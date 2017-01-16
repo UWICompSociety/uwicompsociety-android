@@ -97,7 +97,6 @@ public class CreateForumPostActivity extends AppCompatActivity {
         Bundle bundle = new Bundle();
         bundle.putInt("post_id", post.getForum_id());
         ScreenUtils.makeSharedElementTransition(this, ForumPostActivity.class,
-                bundle, title, message);
-        finish();
+                bundle, true, title, message);
     }
 }

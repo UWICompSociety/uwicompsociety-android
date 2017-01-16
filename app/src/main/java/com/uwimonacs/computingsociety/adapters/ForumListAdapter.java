@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.uwimonacs.computingsociety.R;
 import com.uwimonacs.computingsociety.activities.ForumPostActivity;
 import com.uwimonacs.computingsociety.models.ForumPost;
+import com.uwimonacs.computingsociety.util.ScreenUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +42,7 @@ public class ForumListAdapter extends RecyclerView.Adapter<ForumListAdapter.Foru
 
     @SuppressLint("SetTextI18n")
     @Override
-    public void onBindViewHolder(ForumListHolder holder, int position) {
+    public void onBindViewHolder(final ForumListHolder holder, int position) {
         ForumPost post = forumPosts.get(holder.getAdapterPosition());
 
         holder.title.setText(post.getTopic());
@@ -69,7 +70,9 @@ public class ForumListAdapter extends RecyclerView.Adapter<ForumListAdapter.Foru
             @Override
             public void onClick(View view) {
                 //TODO: Pass bundle
-                context.startActivity(new Intent(context, ForumPostActivity.class));
+                ScreenUtils.makeSharedElementTransition(context, ForumPostActivity.class,
+                        null, false, holder.title, holder.name, holder.message, holder.date,
+                        holder.avatar);
             }
         });
     }
