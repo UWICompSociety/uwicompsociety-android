@@ -25,7 +25,10 @@
     </style>
 
     <style name="AppTheme.NoActionBar.Login">
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+    </style>
 
+    <style name="AppTheme.NoActionBar.NewsItem">
         <item name="android:statusBarColor">@color/colorPrimary</item>
     </style>
 

@@ -31,12 +31,8 @@
             android:name=".activities.UserProfileActivity"
             android:theme="@style/AppTheme.NoActionBar.UserProfileActivity" />
 
-<!--        <activity android:name=".activities.NewsItemActivity">&ndash;&gt;
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>-->
+        <activity android:name=".activities.NewsItemActivity"
+            android:theme="@style/AppTheme.NoActionBar.NewsItem"/>
 
 
         <!-- DB Name -->

@@ -16,11 +16,11 @@ import com.uwimonacs.computingsociety.models.User;
 
 import java.util.List;
 
-public class NewsPostCommentAdapter extends RecyclerView.Adapter<NewsPostCommentAdapter.NewsPostCommentHolder> {
+public class NewsItemCommentAdapter extends RecyclerView.Adapter<NewsItemCommentAdapter.NewsItemCommentHolder> {
     private Context context;
     private List<Comment> comments;
 
-    public NewsPostCommentAdapter(Context context, List<Comment> comments){
+    public NewsItemCommentAdapter(Context context, List<Comment> comments){
         this.context = context;
         this.comments = comments;
 
@@ -28,13 +28,13 @@ public class NewsPostCommentAdapter extends RecyclerView.Adapter<NewsPostComment
     }
 
     @Override
-    public NewsPostCommentHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new NewsPostCommentHolder(LayoutInflater.from(context)
+    public NewsItemCommentHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        return new NewsItemCommentHolder(LayoutInflater.from(context)
                 .inflate(R.layout.comment_list_item, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(final NewsPostCommentHolder holder, int position) {
+    public void onBindViewHolder(final NewsItemCommentHolder holder, int position) {
         final Comment comment = comments.get(holder.getAdapterPosition());
         User user = sampleUser();
 
@@ -85,7 +85,7 @@ public class NewsPostCommentAdapter extends RecyclerView.Adapter<NewsPostComment
 
     private void initExampleData(){
         for(int i = 0; i < 10; i++){
-            Comment comment = new Comment(i, 0, CommentType.BLOGPOST_COMMENT,
+            Comment comment = new Comment(i, 0, CommentType.NEWSITEM_COMMENT,
                     0, context.getString(R.string.lorem_ipsum_text),
                     "07/01/2017 at 12:00pm", 0, 0);
             comments.add(comment);
@@ -97,11 +97,11 @@ public class NewsPostCommentAdapter extends RecyclerView.Adapter<NewsPostComment
                 "https://pbs.twimg.com/profile_images/3309741408/eff94615a3653c01a9d5a178ced7fbb5_400x400.jpeg");
     }
 
-    class NewsPostCommentHolder extends RecyclerView.ViewHolder{
+    class NewsItemCommentHolder extends RecyclerView.ViewHolder{
         ImageView image, btnLike, btnDislike;
         TextView name, comment, date, numLikes, numDislikes;
 
-        NewsPostCommentHolder(View itemView) {
+        NewsItemCommentHolder(View itemView) {
             super(itemView);
 
             initViews();

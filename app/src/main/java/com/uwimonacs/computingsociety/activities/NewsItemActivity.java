@@ -1,5 +1,6 @@
 package com.uwimonacs.computingsociety.activities;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -18,9 +19,8 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import com.uwimonacs.computingsociety.R;
-import com.uwimonacs.computingsociety.adapters.NewsPostCommentAdapter;
+import com.uwimonacs.computingsociety.adapters.NewsItemCommentAdapter;
 import com.uwimonacs.computingsociety.constants.CommentType;
-import com.uwimonacs.computingsociety.models.Blog;
 import com.uwimonacs.computingsociety.models.Comment;
 import com.uwimonacs.computingsociety.models.NewsItem;
 
@@ -35,7 +35,7 @@ public class NewsItemActivity extends AppCompatActivity {
     private FloatingActionButton replyButton;
     private RecyclerView comments;
     private NestedScrollView scrollView;
-    private NewsPostCommentAdapter adapter;
+    private NewsItemCommentAdapter adapter;
     private NewsItem post;
 
     @Override
@@ -73,8 +73,8 @@ public class NewsItemActivity extends AppCompatActivity {
         replyButton = (FloatingActionButton) findViewById(R.id.reply_button);
         comments = (RecyclerView) findViewById(R.id.comments);
         scrollView = (NestedScrollView) findViewById(R.id.scrollview);
-        adapter = new NewsPostCommentAdapter(this, new ArrayList<Comment>());
-        post = sampleNewsPost();
+        adapter = new NewsItemCommentAdapter(this, new ArrayList<Comment>());
+        post = sampleNewsItem();
     }
 
     private void setUpViews(){
@@ -112,12 +112,12 @@ public class NewsItemActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Blog blog = sampleBlog();
-        getSupportActionBar().setTitle(blog.getTopic());
+        NewsItem item = sampleNewsItem();
+        getSupportActionBar().setTitle(item.getTitle());
     }
 
     private void populateViews(){
-        Picasso.with(this).load(post.getImageUrl()).into(image);
+        Picasso.with(this).load(Uri.parse(post.getImageUrl())).into(image);
         title.setText(post.getTitle());
         message.setText(post.getMessage());
         date.setText(post.getDate());
@@ -138,7 +138,7 @@ public class NewsItemActivity extends AppCompatActivity {
                 String reply = replyEditText.getText().toString();
                 if(!TextUtils.isEmpty(reply)){
                     replyEditText.setText("");
-                    adapter.add(new Comment(adapter.getItemCount(), 0, CommentType.BLOGPOST_COMMENT,
+                    adapter.add(new Comment(adapter.getItemCount(), 0, CommentType.NEWSITEM_COMMENT,
                             0, reply, "01/01/2017 at 12:00pm", 0, 0));
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -152,17 +152,11 @@ public class NewsItemActivity extends AppCompatActivity {
     }
 
     @NonNull
-    private NewsItem sampleNewsPost(){
+    private NewsItem sampleNewsItem(){
         return new NewsItem(0, 0, "Sample News Topic","Sample Summary",
                 "07/01/2017 at 12:00pm",
                 getString(R.string.lorem_ipsum_text_double),
-                "http://www.walltor.com/images/wallpaper/lorem-ipsum-3179.jpg",5);
-    }
-
-    @NonNull
-    private Blog sampleBlog(){
-        return new Blog(0, 0, "07/01/2017 at 12:00pm",
-                "News Feed", 1);
+                "android.resource://com.uwimonacs.computingsociety/drawable/banner",5);
     }
 }
 
