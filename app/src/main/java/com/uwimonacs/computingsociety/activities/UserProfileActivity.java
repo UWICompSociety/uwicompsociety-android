@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -25,6 +27,7 @@ public class UserProfileActivity extends AppCompatActivity {
     private ActionBar actionBar;
     private Toolbar toolbar;
     private FloatingActionButton floatingActionButton;
+    private ImageView avatar;
     private ImageView facebook, snapchat, github, linked, insta, twitter;
 
     @Override
@@ -46,6 +49,7 @@ public class UserProfileActivity extends AppCompatActivity {
         discussions = (CardView) findViewById(R.id.view_discussions);
         projects = (CardView) findViewById(R.id.view_projects);
 
+        avatar = (ImageView) findViewById(R.id.avatar);
         facebook = (ImageView)findViewById(R.id.facebook_icon);
         snapchat = (ImageView)findViewById(R.id.snapchat_icon);
         github = (ImageView)findViewById(R.id.github_icon);
@@ -74,12 +78,19 @@ public class UserProfileActivity extends AppCompatActivity {
     private void setUpListners(){
 
         View.OnClickListener onClick = new View.OnClickListener() {
+            @SuppressWarnings("unchecked")
             @Override
             public void onClick(View v) {
                 switch (v.getId()){
                     case R.id.fab:
                         Intent intent = new Intent(UserProfileActivity.this, EditProfileActivity.class);
-                        startActivity(intent);
+                        if (android.os.Build.VERSION.SDK_INT >= 21) {
+                            Pair<View, String> pair = Pair.create((View) avatar, avatar.getTransitionName());
+                            ActivityOptionsCompat options =
+                                    ActivityOptionsCompat.makeSceneTransitionAnimation(UserProfileActivity.this, pair);
+                            startActivity(intent, options.toBundle());
+                        } else
+                            startActivity(intent);
                         break;
                     case R.id.view_blogs:
                         //TODO: implement blog click listener

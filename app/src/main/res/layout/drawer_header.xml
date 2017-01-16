@@ -25,7 +25,9 @@
         android:layout_marginStart="24dp"
         android:layout_marginBottom="8dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="24dp"
+        android:layout_alignParentLeft="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -38,11 +40,14 @@
         android:paddingBottom="4dp"
         android:id="@+id/header_username"
         android:layout_above="@id/header_email"
-        android:layout_alignStart="@id/header_email"/>
+        android:layout_alignStart="@id/header_email"
+        android:layout_alignLeft="@id/header_email" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/avatar"
+        android:transitionName="avatar"
+        tools:targetApi="lollipop"
         android:layout_width="76dp"
         android:layout_height="76dp"
         android:src="@drawable/profile"
@@ -51,5 +56,6 @@
         android:layout_marginTop="48dp"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@id/header_email"
-        android:foreground="?android:selectableItemBackground"/>
+        android:foreground="?android:selectableItemBackground"
+        android:layout_alignLeft="@id/header_email" />
 </RelativeLayout>

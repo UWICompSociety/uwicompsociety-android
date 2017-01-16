@@ -3,6 +3,9 @@ package com.uwimonacs.computingsociety.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,7 +43,7 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsHo
     }
 
     @Override
-    public void onBindViewHolder(NewsHolder newsHolder, int position){
+    public void onBindViewHolder(final NewsHolder newsHolder, int position){
         final NewsItem newsItem = newsItems.get(newsHolder.getAdapterPosition());
 
         newsHolder.title.setText(newsItem.getTitle());
@@ -49,13 +52,24 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsHo
         Picasso.with(context).load(Uri.parse(newsItem.getImage_url())).into(newsHolder.news_image);
 
         newsHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @SuppressWarnings("unchecked")
             @Override
             public void onClick(View view) {
+
                 Intent intent = new Intent(context, NewsItemActivity.class);
                 intent.putExtra("id", newsItem.getNews_id());
                 intent.putExtra("title", newsItem.getTitle());
                 intent.putExtra("message", newsItem.getMessage());
-                context.startActivity(intent);
+                if (android.os.Build.VERSION.SDK_INT >= 21) {
+                    Pair<View, String> pair = Pair.create((View) newsHolder.news_image,
+                            newsHolder.news_image.getTransitionName());
+                    Pair<View, String> pair2 = Pair.create((View) newsHolder.summary,
+                            newsHolder.summary.getTransitionName());
+                    ActivityOptionsCompat options =
+                            ActivityOptionsCompat.makeSceneTransitionAnimation((AppCompatActivity)context, pair, pair2);
+                    context.startActivity(intent, options.toBundle());
+                } else
+                    context.startActivity(intent);
             }
         });
     }

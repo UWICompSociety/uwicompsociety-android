@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.util.Pair;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -150,9 +152,17 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         }
 
         avatar.setOnClickListener(new View.OnClickListener() {
+            @SuppressWarnings("unchecked")
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, UserProfileActivity.class));
+                Intent intent = new Intent(MainActivity.this, UserProfileActivity.class);
+                if (android.os.Build.VERSION.SDK_INT >= 21) {
+                    Pair<View, String> pair = Pair.create((View) avatar, avatar.getTransitionName());
+                    ActivityOptionsCompat options =
+                            ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, pair);
+                    startActivity(intent, options.toBundle());
+                } else
+                    startActivity(intent);
             }
         });
 

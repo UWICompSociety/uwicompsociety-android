@@ -38,7 +38,7 @@ public class NewsItem extends Model {
     @Column(name="num_likes")
     private int num_likes;
 
-    @Column(name="num-dislikes")
+    @Column(name="num_dislikes")
     private int num_dislikes;
 
     public NewsItem() {

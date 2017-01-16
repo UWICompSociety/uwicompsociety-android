@@ -15,6 +15,8 @@
 
         <ImageView
             android:id="@+id/news_item_image"
+            android:transitionName="news_item_image"
+            tools:targetApi="lollipop"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:scaleType="centerCrop"
@@ -37,6 +39,8 @@
             <TextView
                 android:layout_marginTop="16dp"
                 android:id="@+id/summary"
+                android:transitionName="summary"
+                tools:targetApi="lollipop"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"

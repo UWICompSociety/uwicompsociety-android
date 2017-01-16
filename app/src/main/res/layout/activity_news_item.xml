@@ -6,6 +6,7 @@
     android:focusableInTouchMode="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/activity_news_item"
     tools:context=".activities.NewsItemActivity">
     <android.support.design.widget.CoordinatorLayout
         android:orientation="vertical"
@@ -23,6 +24,8 @@
                 android:layout_height="wrap_content">
                 <ImageView
                     android:id="@+id/image1"
+                    android:transitionName="news_item_image"
+                    tools:targetApi="lollipop"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:scaleType="centerCrop"
@@ -66,6 +69,8 @@
                     tools:text="@string/sample"/>
                 <TextView
                     android:id="@+id/news_message"
+                    android:transitionName="summary"
+                    tools:targetApi="lollipop"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"

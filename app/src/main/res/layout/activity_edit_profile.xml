@@ -20,6 +20,8 @@
                 android:id="@+id/edit">
                 <ImageView
                     android:id="@+id/avatar"
+                    android:transitionName="summary"
+                    tools:targetApi="lollipop"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
                     android:scaleType="centerCrop"
