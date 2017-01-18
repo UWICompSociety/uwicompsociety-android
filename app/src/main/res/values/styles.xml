@@ -17,20 +17,5 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="AppTheme.NoActionBar.UserProfileActivity" />
-
     <style name="AppTheme.NoActionBar.BlogPostActivity" />
-
-    <style name="AppTheme.NoActionBar.ForumPost" />
-
-    <style name="AppTheme.NoActionBar.NewsItem" />
-
-    <style name="AppTheme.NoActionBar.CreateAccount" />
-
-    <style name="AppTheme.NoActionBar.CreateForumPost" />
-
-    <style name="AppTheme.NoActionBar.EditProfile" />
-    <style name="AppTheme.NoActionBar.Login" />
-
-
 </resources>

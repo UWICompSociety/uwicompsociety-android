@@ -24,7 +24,7 @@
     <string name="email_hint">Email address</string>
     <string name="username_hint">Username</string>
     <string name="github_username_hint">GitHub username</string>
-    <string name="view_blogs">View Blogs</string>
+    <string name="view_blogs">View Blog</string>
     <string name="view_discussions">View Discussions</string>
     <string name="view_projects">View Projects</string>
 
@@ -39,7 +39,7 @@
     <!--Related to Navigation Drawer-->
     <string name="item_news_feed">News Feed</string>
     <string name="item_forums">Forums</string>
-    <string name="item_blogs">Blogs</string>
+    <string name="item_blogs">Blog Posts</string>
     <string name="item_society_projects">Society Projects</string>
     <string name="item_members">Members</string>
     <string name="item_settings">Settings</string>
@@ -63,8 +63,9 @@
     <!--Miscellaneous-->
     <string name="sample_date">07/01/2017 12:00pm</string>
     <string name="sample">Sample news item topic</string>
-    <string name="comment">Post a comment...</string>
+    <string name="comment">Post a comment…</string>
     <string name="search">Search</string>
+    <string name="post">Make a post</string>
     <string name="save">Save</string>
     <string name="read_more">READ MORE</string>
     <string name="sample_name">Firstname Lastname</string>

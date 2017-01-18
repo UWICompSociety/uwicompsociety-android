@@ -35,7 +35,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener,
         NavigationView.OnNavigationItemSelectedListener{
-    private View fragment;
     private Toolbar toolbar;
     private ActionBar actionBar;
     private NavigationView navigationView;
@@ -114,7 +113,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     }
 
     public void initViews(){
-        fragment = findViewById(R.id.fragment);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.nav_drawer);
@@ -214,7 +212,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
             case R.id.blogs:
                 checkedItem = R.id.blogs;
                 blogFragment = new BlogFragment();
-                setCurrentFragment(blogFragment, "Blogs");
+                setCurrentFragment(blogFragment, "Blog Posts");
                 drawerLayout.closeDrawers();
                 return true;
             case R.id.projects:

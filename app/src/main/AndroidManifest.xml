@@ -13,8 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name=".activities.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar.Login">
+            android:name=".activities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,15 +21,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.CreateAccountActivity"
-            android:theme="@style/AppTheme.NoActionBar.CreateAccount" />
-        <activity android:name=".activities.MainActivity" />
-        <activity
-            android:name=".activities.UserProfileActivity"
-            android:theme="@style/AppTheme.NoActionBar.UserProfileActivity" />
-        <activity
-            android:name=".activities.NewsItemActivity"
-            android:theme="@style/AppTheme.NoActionBar.NewsItem" />
+            android:name=".activities.CreateAccountActivity" />
+        <activity android:name=".activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar.NoStatusBar"/>
+        <activity android:name=".activities.UserProfileActivity" />
+        <activity android:name=".activities.NewsItemActivity" />
 
         <!-- DB Name -->
         <meta-data
@@ -50,15 +45,11 @@
         <activity
             android:name=".activities.BlogPostActivity"
             android:theme="@style/AppTheme.NoActionBar.BlogPostActivity" />
-        <activity
-            android:name=".activities.EditProfileActivity"
-            android:theme="@style/AppTheme.NoActionBar.EditProfile" />
-        <activity
-            android:name=".activities.ForumPostActivity"
-            android:theme="@style/AppTheme.NoActionBar.ForumPost" />
-
-        <activity android:name=".activities.CreateForumPostActivity"
-            android:theme="@style/AppTheme.NoActionBar.CreateForumPost"/>
+        <activity android:name=".activities.EditProfileActivity" />
+        <activity android:name=".activities.ForumPostActivity" />
+        <activity android:name=".activities.CreateForumPostActivity" />
+        <activity android:name=".activities.CreateBlogPostActivity" />
+        <activity android:name=".activities.BlogActivity" />
     </application>
 
 </manifest>

@@ -40,7 +40,7 @@ public class BlogFragment extends Fragment {
 
     public void initViews(){
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-        adapter = new BlogListAdapter(new ArrayList<BlogPost>(), getContext());
+        adapter = new BlogListAdapter(new ArrayList<BlogPost>(), getContext(), true);
     }
 
     public void setUpViews(){

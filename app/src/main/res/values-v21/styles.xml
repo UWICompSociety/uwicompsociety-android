@@ -4,40 +4,15 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
     </style>
 
-    <style name="AppTheme.NoActionBar.UserProfileActivity">
-        <item name="android:statusBarColor">@color/colorPrimary</item>
+    <style name="AppTheme.NoActionBar.NoStatusBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
     <style name="AppTheme.NoActionBar.BlogPostActivity">
         <item name="android:statusBarColor">@color/colorPrimaryDark</item>
-    </style>
-
-    <style name="AppTheme.NoActionBar.ForumPost">
-        <item name="android:statusBarColor">@color/colorPrimary</item>
-    </style>
-
-    <style name="AppTheme.NoActionBar.CreateAccount">
-        <item name="android:statusBarColor">@color/colorPrimary</item>
-    </style>
-
-    <style name="AppTheme.NoActionBar.CreateForumPost">
-        <item name="android:statusBarColor">@color/colorPrimary</item>
-    </style>
-
-
-    <style name="AppTheme.NoActionBar.EditProfile">
-        <item name="android:statusBarColor">@color/colorPrimary</item>
-    </style>
-
-    <style name="AppTheme.NoActionBar.Login">
-        <item name="android:statusBarColor">@color/colorPrimary</item>
-    </style>
-
-    <style name="AppTheme.NoActionBar.NewsItem">
-        <item name="android:statusBarColor">@color/colorPrimary</item>
     </style>
 
 </resources>

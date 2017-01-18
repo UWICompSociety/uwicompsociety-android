@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.uwimonacs.computingsociety.R;
+import com.uwimonacs.computingsociety.util.ScreenUtils;
 
 /**
  * Created by jawil on 12/1/2017.
@@ -83,17 +84,11 @@ public class UserProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 switch (v.getId()){
                     case R.id.fab:
-                        Intent intent = new Intent(UserProfileActivity.this, EditProfileActivity.class);
-                        if (android.os.Build.VERSION.SDK_INT >= 21) {
-                            Pair<View, String> pair = Pair.create((View) avatar, avatar.getTransitionName());
-                            ActivityOptionsCompat options =
-                                    ActivityOptionsCompat.makeSceneTransitionAnimation(UserProfileActivity.this, pair);
-                            startActivity(intent, options.toBundle());
-                        } else
-                            startActivity(intent);
+                        ScreenUtils.makeSharedElementTransition(UserProfileActivity.this,
+                                EditProfileActivity.class, null, false, avatar);
                         break;
                     case R.id.view_blogs:
-                        //TODO: implement blog click listener
+                        startActivity(new Intent(UserProfileActivity.this, BlogActivity.class));
                         break;
                     case R.id.view_discussions:
                         //TODO: implement discussions listener

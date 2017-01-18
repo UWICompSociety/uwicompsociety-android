@@ -43,6 +43,7 @@
         android:layout_marginStart="16dp"
         android:dividerHeight="0dp"
         app:menu="@menu/menu_drawer"
-        app:headerLayout="@layout/drawer_header"/>
+        app:headerLayout="@layout/drawer_header"
+        android:layout_marginLeft="16dp" />
 
 </android.support.v4.widget.DrawerLayout>

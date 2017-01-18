@@ -25,11 +25,12 @@ public class BlogListAdapter extends RecyclerView.Adapter<BlogListAdapter.BlogHo
     private List<BlogPost> posts;
     private Context context;
 
-    public BlogListAdapter(List<BlogPost> posts, Context context){
+    public BlogListAdapter(List<BlogPost> posts, Context context, boolean init){
         this.posts = posts;
         this.context = context;
 
-        initExampleData();
+        if(init)
+            initExampleData();
     }
 
     @Override
