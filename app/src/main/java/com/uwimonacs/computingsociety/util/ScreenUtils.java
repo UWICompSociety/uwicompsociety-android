@@ -1,5 +1,6 @@
 package com.uwimonacs.computingsociety.util;
 
+import android.animation.Animator;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,6 +10,7 @@ import android.support.v4.util.Pair;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 
 /**
  * @author sultanofcardio
@@ -49,5 +51,30 @@ public class ScreenUtils {
             if(finish)
                 ((AppCompatActivity)context).finish();
         }
+    }
+
+    public static void circularReveal(final View revealCenter, final View revealView, final int duration,
+                                       final Animator.AnimatorListener listener){
+        revealView.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View view, int i, int i1, int i2, int i3, int i4, int i5, int i6, int i7) {
+                revealView.removeOnLayoutChangeListener(this);
+
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+
+                    int cx = (int) revealCenter.getX() + (revealCenter.getWidth()/2);
+                    int cy = (int) revealCenter.getY() + (revealCenter.getHeight()/2);
+
+                    float finalRadius = (float) Math.max(revealView.getWidth(),
+                            revealView.getHeight());
+
+                    Animator anim = ViewAnimationUtils
+                            .createCircularReveal(revealView, cx, cy, 0, finalRadius)
+                            .setDuration(duration);
+                    anim.addListener(listener);
+                    anim.start();
+                }
+            }
+        });
     }
 }

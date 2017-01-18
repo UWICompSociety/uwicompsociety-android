@@ -1,7 +1,12 @@
 package com.uwimonacs.computingsociety.activities;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
+import android.graphics.drawable.ColorDrawable;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +17,7 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.widget.EditText;
 
 import com.uwimonacs.computingsociety.R;
@@ -19,7 +25,7 @@ import com.uwimonacs.computingsociety.models.ForumPost;
 import com.uwimonacs.computingsociety.util.ScreenUtils;
 
 public class CreateForumPostActivity extends AppCompatActivity {
-    private View root;
+    private View root, revealCenter;
     private Toolbar toolbar;
     private ActionBar actionBar;
     private EditText title, message;
@@ -74,12 +80,36 @@ public class CreateForumPostActivity extends AppCompatActivity {
 
     private void initViews(){
         root = findViewById(R.id.activity_create_forum_post);
+        revealCenter = findViewById(R.id.reveal_center);
         title = (EditText) findViewById(R.id.title);
         message = (EditText) findViewById(R.id.message);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
     }
 
     private void setUpViews(){
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            ScreenUtils.circularReveal(revealCenter, root, 500, new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    super.onAnimationEnd(animation);
+                    root.setBackgroundColor(ContextCompat.getColor(
+                            CreateForumPostActivity.this, android.R.color.white));
+
+                    CreateForumPostActivity.this.getWindow()
+                            .setBackgroundDrawable(new ColorDrawable(ContextCompat
+                                    .getColor(CreateForumPostActivity.this, android.R.color.white)));
+                }
+            });
+        } else {
+            root.setBackgroundColor(ContextCompat.getColor(
+                    CreateForumPostActivity.this, android.R.color.white));
+
+            getWindow()
+                    .setBackgroundDrawable(new ColorDrawable(ContextCompat
+                            .getColor(CreateForumPostActivity.this, android.R.color.white)));
+        }
+
         title.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {

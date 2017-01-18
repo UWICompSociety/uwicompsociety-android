@@ -47,7 +47,8 @@
             android:theme="@style/AppTheme.NoActionBar.BlogPostActivity" />
         <activity android:name=".activities.EditProfileActivity" />
         <activity android:name=".activities.ForumPostActivity" />
-        <activity android:name=".activities.CreateForumPostActivity" />
+        <activity android:name=".activities.CreateForumPostActivity"
+            android:theme="@style/AppTheme.NoActionBar.Transparent"/>
         <activity android:name=".activities.CreateBlogPostActivity" />
         <activity android:name=".activities.BlogActivity" />
     </application>

@@ -6,6 +6,7 @@
     android:id="@+id/activity_create_forum_post"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
     tools:context=".activities.CreateForumPostActivity">
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -172,5 +173,12 @@
                 android:layout_height="16dp" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
-
+    <android.support.design.widget.FloatingActionButton
+        android:visibility="invisible"
+        android:id="@+id/reveal_center"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_margin="16dp"
+        app:elevation="0dp"
+        android:layout_gravity="bottom|end"/>
 </android.support.design.widget.CoordinatorLayout>

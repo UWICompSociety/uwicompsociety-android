@@ -55,6 +55,7 @@ public class ForumTabsFragment extends Fragment {
             public void onClick(View view) {
                 // TODO: Check for user profile completeness
                 startActivity(new Intent(getContext(), CreateForumPostActivity.class));
+                getActivity().overridePendingTransition(0, R.anim.no_animation);
             }
         });
     }
@@ -85,8 +86,8 @@ public class ForumTabsFragment extends Fragment {
         });
 
         tabLayout.setupWithViewPager(viewPager);
-        tabLayout.getTabAt(0).setText("Latest");
-        tabLayout.getTabAt(1).setText("Popular");
+        tabLayout.getTabAt(0).setText("Most Recent");
+        tabLayout.getTabAt(1).setText("Most Popular");
     }
 
     private void showProfileDialog(){
