@@ -4,10 +4,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v4.util.Pair;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,14 +24,17 @@ import com.uwimonacs.computingsociety.util.ScreenUtils;
 public class CreateForumPostActivity extends AppCompatActivity {
     private View root;
     private Toolbar toolbar;
+    private ActionBar actionBar;
     private EditText title, message;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_forum_post);
+        setContentView(R.layout.activity_create_forum_post_2);
 
         initViews();
+
+        setUpViews();
 
         setUpActionBar();
     }
@@ -76,10 +82,33 @@ public class CreateForumPostActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
     }
 
+    private void setUpViews(){
+        title.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(TextUtils.isEmpty(charSequence))
+                    actionBar.setTitle("Make a Post");
+                else
+                    actionBar.setTitle(charSequence);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+    }
+
     @SuppressWarnings("ConstantConditions")
     private void setUpActionBar(){
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     private void createPost(){
