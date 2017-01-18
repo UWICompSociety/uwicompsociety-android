@@ -33,7 +33,7 @@ public class EditProfileActivity extends AppCompatActivity {
     private ImageView avatar, cameraButton;
     private String Name, Email, Username, GitUsername, Facebook,
             Twitter, Instagram, LinkedIn, Snapchat, Github;
-    private CoordinatorLayout root;
+    private View root;
     private Toolbar toolbar;
     private boolean change = false;
 
@@ -81,7 +81,7 @@ public class EditProfileActivity extends AppCompatActivity {
         github_url = (EditText)findViewById(R.id.github_url);
         avatar = (ImageView)findViewById(R.id.avatar);
         cameraButton = (ImageView)findViewById(R.id.camera_button);
-        root = (CoordinatorLayout)findViewById(R.id.edit);
+        root = findViewById(R.id.activity_edit_profile);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
     }
 
