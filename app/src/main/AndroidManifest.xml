@@ -23,6 +23,7 @@
         <activity
             android:name=".activities.CreateAccountActivity" />
         <activity android:name=".activities.MainActivity"
+            android:configChanges="orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar.NoStatusBar"/>
         <activity android:name=".activities.UserProfileActivity" />
         <activity android:name=".activities.NewsItemActivity" />
