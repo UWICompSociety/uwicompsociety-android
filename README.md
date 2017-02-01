@@ -125,7 +125,7 @@ The app will support the following feature set, which is subject to change
 
 ## Contributions
 
-If you have been given push access to this repository, you should clone this repository and bear the following general working git guidelines in mind. You will have push access to this repository if you are a member of ![this team](https://github.com/orgs/UWICompSociety/teams/mobile-development-sig).
+If you have been given push access to this repository, you should clone this repository and bear the following general working git guidelines in mind. You will have push access to this repository if you are a member of [this team](https://github.com/orgs/UWICompSociety/teams/mobile-development-sig).
 
   * No work is to be done on the master branch. The master branch is protected and you won't be able to push to it
   * Do not work directly on the dev branch. After you clone this repo you should create a local branch for any feature you are working on
