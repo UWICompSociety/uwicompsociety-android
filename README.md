@@ -63,19 +63,20 @@ The app will support the following feature set, which is subject to change
     * first_name: String
     * last_name: String
     * username: String
+    * position: String
+    * image_url: String
 
 - Blog
     * blog_id: int
     * user_id: int
-    * date: String
     * topic: String
     * num_posts: int
 
-- Forum
-    * forum_id: int
+- ForumPost
+    * post_id: int
     * user_id: int
     * topic: String
-    * date: String
+    * date: long
     * message: String
     * num_comments: int
     * num_likes: int
@@ -86,7 +87,7 @@ The app will support the following feature set, which is subject to change
     * user_id: int
     * blog_id: int
     * title: String
-    * date: String
+    * date: long
     * message: String
     * num_comments: int
     * num_likes: int
@@ -98,18 +99,21 @@ The app will support the following feature set, which is subject to change
     * type: int
     * parent_id: int
     * message: String
-    * date: String
+    * date: long
     * num_likes: int
     * num_dislikes: int
 
 - NewsItem
-    * news_id: int
-    * user_id: int
+    * item_id: int
     * title: String
     * summary: String
-    * date: String
+    * message: String
+    * date: long
     * body: String
+    * image_url: String
     * num_comments: int
+    * num_likes: int
+    * num_dislikes: int
 
 - Project
     * project_id: int
