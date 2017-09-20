@@ -30,6 +30,7 @@ public class Project extends Model {
     private String link;
 
     public Project() {
+        super();
     }
 
     public Project(int project_id, List<Integer> user_ids, String name, String description, String link) {

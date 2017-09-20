@@ -34,7 +34,9 @@ public class ForumPost extends Model {
     @Column(name="num_dislikes")
     private int num_dislikes;
 
-    public ForumPost(){}
+    public ForumPost(){
+        super();
+    }
     public ForumPost(int forum_id, int user_id, String topic, String date, String message, int num_comments,
                      int num_likes, int num_dislikes){
         this.forum_id = forum_id;

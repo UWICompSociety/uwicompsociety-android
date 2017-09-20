@@ -4,6 +4,7 @@ import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 
+
 /**
  * @author sultanofcardio
  * This class represents a news item in the system. News items will be posted by admin users.
@@ -11,6 +12,8 @@ import com.activeandroid.annotation.Table;
  */
 @Table(name="NewsItem")
 public class NewsItem extends Model {
+
+
     @Column(name="news_id")
     private int news_id;
 
@@ -42,6 +45,7 @@ public class NewsItem extends Model {
     private int num_dislikes;
 
     public NewsItem() {
+        super();
     }
 
     public NewsItem(int news_id, int user_id, String title, String summary, String date,

@@ -45,7 +45,7 @@ public class User extends Model {
      * Mandatory no arguments constructor. To be user by superclass
      */
     public User(){
-
+        super();
     }
 
     /**

@@ -38,6 +38,7 @@ public class Comment extends Model {
     private int num_dislikes;
 
     public Comment() {
+        super();
     }
 
     public Comment(int comment_id, int user_id, int type, int parent_id, String message, String date, int num_likes, int num_dislikes) {

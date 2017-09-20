@@ -42,7 +42,12 @@ public class BlogPost extends Model{
     @Column(name="num_dislikes")
     private int num_dislikes;
 
-    public BlogPost(){}
+    public BlogPost()
+    {
+        super();
+    }
+
+
 
     public BlogPost(int post_id, int user_id, int blog_id, String title, String date, String message,
                     String imageUrl, int num_comments, int num_likes, int num_dislikes){

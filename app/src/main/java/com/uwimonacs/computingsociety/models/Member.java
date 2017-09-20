@@ -14,6 +14,11 @@ public class Member extends Model {
     private String name, position;
     private int picId;
 
+    public Member()
+    {
+        super();
+    }
+
     public Member(String name, String position, int picId){
         this.name = name;
         this.position = position;

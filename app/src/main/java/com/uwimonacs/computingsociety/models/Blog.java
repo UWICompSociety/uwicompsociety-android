@@ -26,7 +26,10 @@ public class Blog extends Model {
     @Column(name="num_posts")
     private int num_posts;
 
-    public Blog(){}
+    public Blog()
+    {
+        super();
+    }
     public Blog(int blog_id, int user_id, String date, String topic, int num_posts){
         this.blog_id = blog_id;
         this.user_id = user_id;
